@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -105,25 +104,14 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto container-padding">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10">
-              <Image
-                src="/images/logo.jpg"
-                alt="Movimento Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="relative hidden sm:block">
-              <span className="text-2xl font-normal tracking-tight" style={headingText}>
-                Movimento
-              </span>
-              <div
-                className="absolute -bottom-1 left-0 h-px w-0 group-hover:w-full transition-all duration-500 origin-left"
-                style={{ backgroundColor: "var(--brand-accent)" }}
-              />
-            </div>
+          <Link href="/" className="relative group">
+            <span className="text-2xl font-normal tracking-tight" style={headingText}>
+              Movimento
+            </span>
+            <div
+              className="absolute -bottom-1 left-0 h-px w-0 group-hover:w-full transition-all duration-500 origin-left"
+              style={{ backgroundColor: "var(--brand-accent)" }}
+            />
           </Link>
 
           {/* Desktop navigation */}
