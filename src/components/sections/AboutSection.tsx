@@ -68,13 +68,13 @@ function StoryColumn({ title, lead, paragraphs, extraClass = "" }: StoryColumnPr
     <div className={`space-y-8 ${extraClass}`}>
       <div>
         <AccentDivider />
-        <h3 className="text-4xl md:text-5xl mb-8 font-normal" style={headingText}>
+        <h3 className="text-4xl md:text-5xl mb-8" style={headingText}>
           {title}
         </h3>
       </div>
 
       <div className="space-y-6 text-lg leading-relaxed" style={bodyText}>
-        <p className="text-2xl leading-relaxed" style={{ color: "var(--brand-dark)" }}>
+        <p className="text-2xl leading-relaxed font-semibold" style={{ color: "var(--brand-dark)" }}>
           {lead}
         </p>
         {paragraphs.map((text) => (
@@ -100,7 +100,7 @@ function ValueCard({ number, title, description, index }: ValueCardProps) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: stagger, duration: 0.8 }}
+      transition={{ delay: stagger, duration: 0.6 }}
       className="group"
     >
       <div className="mb-6 overflow-hidden">
@@ -109,9 +109,9 @@ function ValueCard({ number, title, description, index }: ValueCardProps) {
           whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: stagger + 0.2, duration: 0.6 }}
-          className="text-8xl font-normal leading-none"
+          className="text-8xl font-bold leading-none"
           style={{
-            fontFamily: "var(--font-dm-serif)",
+            fontFamily: "var(--font-sans)",
             color: "var(--brand-accent)",
             opacity: 0.4,
           }}
@@ -120,9 +120,9 @@ function ValueCard({ number, title, description, index }: ValueCardProps) {
         </motion.div>
       </div>
 
-      <AccentDivider className="w-16 h-px mb-6 origin-left" color="var(--brand-primary)" />
+      <AccentDivider className="w-16 h-px mb-6 origin-left" color="var(--brand-accent)" />
 
-      <h4 className="text-3xl mb-4 font-normal" style={headingText}>
+      <h4 className="text-3xl mb-4" style={headingText}>
         {title}
       </h4>
 
@@ -142,30 +142,19 @@ export default function AboutSection() {
     <section
       id="about"
       className="section-padding relative"
-      style={{ backgroundColor: "var(--brand-cream)" }}
+      style={{ backgroundColor: "var(--brand-light)" }}
     >
       <div className="max-w-7xl mx-auto container-padding">
         {/* Hero statement */}
         <AnimatedSection>
           <div className="mb-32 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 0.08, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5 }}
-              className="absolute -left-8 -top-16 text-[20rem] leading-none select-none"
-              style={{ fontFamily: "var(--font-dm-serif)", color: "var(--brand-primary)" }}
-            >
-              &ldquo;
-            </motion.div>
-
             <div className="relative z-10 max-w-5xl">
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-8"
+                transition={{ duration: 0.6 }}
+                className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-8"
                 style={serifText}
               >
                 Move better, not just more.
@@ -175,20 +164,20 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-6xl md:text-7xl lg:text-8xl font-normal"
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-6xl md:text-7xl lg:text-8xl"
                 style={headingText}
               >
                 Discover our{" "}
-                <span className="italic relative inline-block" style={{ color: "var(--brand-accent)" }}>
+                <span className="relative inline-block" style={{ color: "var(--brand-primary)" }}>
                   innovative approach
                   <motion.div
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.6 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
                     className="absolute bottom-2 left-0 w-full h-1 origin-left"
-                    style={{ backgroundColor: "var(--brand-accent)", opacity: 0.3 }}
+                    style={{ backgroundColor: "var(--brand-accent)", opacity: 0.4 }}
                   />
                 </span>
                 .
@@ -201,7 +190,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 mb-32 relative">
           <div
             className="hidden lg:block absolute left-1/2 top-0 w-px h-full -translate-x-1/2"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
+            style={{ backgroundColor: "rgba(62,74,82,0.1)" }}
           />
 
           {STORY_COLUMNS.map((column, index) => (
@@ -215,7 +204,7 @@ export default function AboutSection() {
         <AnimatedSection>
           <div className="mb-20">
             <div className="mb-16">
-              <SectionHeading className="text-5xl md:text-6xl font-normal text-center">
+              <SectionHeading className="text-5xl md:text-6xl font-bold text-center">
                 What Sets Us Apart
               </SectionHeading>
             </div>
@@ -234,29 +223,23 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             className="mt-32 text-center max-w-4xl mx-auto py-16 border-t border-b"
-            style={{ borderColor: "rgba(0, 0, 0, 0.15)" }}
+            style={{ borderColor: "rgba(62,74,82,0.15)" }}
           >
             <p
-              className="text-3xl md:text-4xl lg:text-5xl font-light leading-relaxed"
+              className="text-3xl md:text-4xl lg:text-5xl leading-relaxed"
               style={serifText}
             >
               From method to practice,{" "}
-              <span className="italic font-normal" style={{ color: "var(--brand-accent)" }}>
-                Italian excellence
-              </span>{" "}
-              in every step.
+              <span className="font-semibold" style={{ color: "var(--brand-primary)" }}>
+                precision in every step
+              </span>
+              .
             </p>
           </motion.div>
         </AnimatedSection>
       </div>
-
-      {/* Decorative background gradient */}
-      <div
-        className="absolute bottom-0 left-0 w-full h-1/3 opacity-5"
-        style={{ background: "linear-gradient(0deg, var(--brand-primary) 0%, transparent 100%)" }}
-      />
     </section>
   );
 }

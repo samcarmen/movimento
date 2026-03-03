@@ -1,27 +1,15 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit, DM_Serif_Display } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import StructuredData from "@/components/StructuredData";
 
-const cormorant = Cormorant_Garamond({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
-  style: ["normal", "italic"],
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-dm-serif",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -88,11 +76,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${outfit.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={plusJakarta.variable}>
       <head>
         <link rel="canonical" href="https://movimento.fitness" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#5F8FA6" />
         <StructuredData />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">

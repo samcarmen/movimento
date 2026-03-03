@@ -53,17 +53,24 @@ const plans = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="section-padding bg-gray-50">
+    <section
+      id="pricing"
+      className="section-padding"
+      style={{ backgroundColor: "var(--brand-light)" }}
+    >
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
           <div className="text-center mb-16">
             <h2
-              className="text-4xl md:text-5xl font-heading font-bold mb-4"
-              style={{ color: 'var(--brand-primary)' }}
+              className="text-4xl md:text-5xl font-bold mb-4"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
             >
               Choose Your Plan
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p
+              className="text-xl max-w-2xl mx-auto"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)", opacity: 0.7 }}
+            >
               Flexible membership options designed to fit your lifestyle and goals
             </p>
           </div>
@@ -80,17 +87,20 @@ export default function PricingSection() {
             >
               <Card
                 className={`relative p-8 h-full flex flex-col ${
-                  plan.popular
-                    ? "border-2 shadow-xl scale-105"
-                    : "border-gray-200"
+                  plan.popular ? "border-2 shadow-xl scale-105" : ""
                 }`}
-                style={plan.popular ? { borderColor: 'var(--brand-accent)' } : {}}
+                style={{
+                  borderColor: plan.popular
+                    ? "var(--brand-primary)"
+                    : "rgba(95,143,166,0.15)",
+                  backgroundColor: "white",
+                }}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span
                       className="text-white px-4 py-1 rounded-full text-sm font-medium"
-                      style={{ backgroundColor: 'var(--brand-accent)' }}
+                      style={{ backgroundColor: "var(--brand-primary)", fontFamily: "var(--font-sans)" }}
                     >
                       Most Popular
                     </span>
@@ -99,22 +109,26 @@ export default function PricingSection() {
 
                 <div className="mb-6">
                   <h3
-                    className="text-2xl font-heading font-bold mb-2"
-                    style={{ color: 'var(--brand-primary)' }}
+                    className="text-2xl font-bold mb-2"
+                    style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
                   >
                     {plan.name}
                   </h3>
-                  <p className="text-gray-600">{plan.description}</p>
+                  <p style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)", opacity: 0.6 }}>
+                    {plan.description}
+                  </p>
                 </div>
 
                 <div className="mb-6">
                   <span
                     className="text-5xl font-bold"
-                    style={{ color: 'var(--brand-primary)' }}
+                    style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
                   >
                     {plan.price}
                   </span>
-                  <span className="text-gray-600">{plan.period}</span>
+                  <span style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)", opacity: 0.6 }}>
+                    {plan.period}
+                  </span>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-grow">
@@ -123,23 +137,18 @@ export default function PricingSection() {
                       <Check
                         className="flex-shrink-0 mt-0.5 mr-3"
                         size={20}
-                        style={{ color: 'var(--brand-accent)' }}
+                        style={{ color: "var(--brand-accent)" }}
                       />
-                      <span className="text-gray-700">{feature}</span>
+                      <span style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)", opacity: 0.8 }}>
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
 
                 <Button
-                  className="w-full"
-                  style={
-                    plan.popular
-                      ? {
-                          backgroundColor: 'var(--brand-accent)',
-                          color: 'white',
-                        }
-                      : { backgroundColor: '#1a1a1a' }
-                  }
+                  className="w-full font-medium text-white transition-opacity duration-200 hover:opacity-90"
+                  style={{ backgroundColor: "var(--brand-cta)", fontFamily: "var(--font-sans)" }}
                 >
                   Get Started
                 </Button>

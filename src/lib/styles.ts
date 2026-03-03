@@ -8,37 +8,39 @@ import type { CSSProperties } from "react";
 // each pattern is declared exactly once.
 // ---------------------------------------------------------------------------
 
-/** Body / paragraph copy: Outfit, light weight, charcoal */
+/** Body / paragraph copy: Plus Jakarta Sans, regular weight, slate */
 export const bodyText: CSSProperties = {
-  fontFamily: "var(--font-outfit)",
-  color: "var(--brand-charcoal)",
+  fontFamily: "var(--font-sans)",
+  color: "var(--brand-dark)",
+  fontWeight: 400,
+};
+
+/** Heading: Plus Jakarta Sans, bold, slate */
+export const headingText: CSSProperties = {
+  fontFamily: "var(--font-sans)",
+  color: "var(--brand-dark)",
+  fontWeight: 700,
+};
+
+/** Subtle display text: same sans, lighter weight/color */
+export const serifText: CSSProperties = {
+  fontFamily: "var(--font-sans)",
+  color: "var(--brand-dark)",
   fontWeight: 300,
 };
 
-/** Heading: DM Serif, dark */
-export const headingText: CSSProperties = {
-  fontFamily: "var(--font-dm-serif)",
-  color: "var(--brand-dark)",
-};
-
-/** Serif display: Cormorant, dark */
-export const serifText: CSSProperties = {
-  fontFamily: "var(--font-cormorant)",
-  color: "var(--brand-dark)",
-};
-
-/** Label / eyebrow: Outfit, medium weight, dark */
+/** Label / eyebrow: Plus Jakarta Sans, medium weight, slate */
 export const labelText: CSSProperties = {
-  fontFamily: "var(--font-outfit)",
+  fontFamily: "var(--font-sans)",
   color: "var(--brand-dark)",
   fontWeight: 500,
 };
 
-/** Primary dark button: dark background, light text, Outfit font */
+/** Primary CTA button: terracotta background, white text */
 export const darkButtonStyle: CSSProperties = {
-  backgroundColor: "var(--brand-dark)",
-  color: "var(--brand-light)",
-  fontFamily: "var(--font-outfit)",
+  backgroundColor: "var(--brand-cta)",
+  color: "#ffffff",
+  fontFamily: "var(--font-sans)",
 };
 
 // ---------------------------------------------------------------------------

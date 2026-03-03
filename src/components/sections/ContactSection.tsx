@@ -136,8 +136,8 @@ export default function ContactSection() {
               </SectionHeading>
             </div>
             <p
-              className="text-xl md:text-2xl text-center max-w-3xl mx-auto font-light italic"
-              style={{ fontFamily: "var(--font-cormorant)", color: "var(--brand-charcoal)" }}
+              className="text-xl md:text-2xl text-center max-w-3xl mx-auto font-light"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
             >
               Ready to move better and live better? Contact us to begin your personalized journey
             </p>

@@ -7,8 +7,7 @@ import type { ComponentProps } from "react";
 type ShimmerButtonProps = ComponentProps<typeof Button>;
 
 /**
- * A dark-branded button with a shimmer hover effect. Wraps the base Button
- * component so the gradient overlay does not need to be duplicated everywhere.
+ * CTA button in terracotta brand color with simple hover transition.
  */
 export default function ShimmerButton({
   children,
@@ -18,12 +17,11 @@ export default function ShimmerButton({
 }: ShimmerButtonProps) {
   return (
     <Button
-      className={`relative overflow-hidden group ${className}`}
+      className={`transition-all duration-200 hover:opacity-90 rounded-md ${className}`}
       style={{ ...darkButtonStyle, ...style }}
       {...props}
     >
-      <span className="relative z-10">{children}</span>
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+      {children}
     </Button>
   );
 }

@@ -100,10 +100,10 @@ export default function WhoItsForSection() {
             </SectionHeading>
 
             <p
-              className="text-2xl md:text-3xl max-w-4xl mx-auto font-light italic"
+              className="text-2xl md:text-3xl max-w-4xl mx-auto font-light"
               style={{
-                fontFamily: "var(--font-cormorant)",
-                color: "var(--brand-charcoal)",
+                fontFamily: "var(--font-sans)",
+                color: "var(--brand-dark)",
               }}
             >
               Movimento is for anyone who wants to move with intention and live with less

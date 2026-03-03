@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "@/components/shared/ShimmerButton";
-import { headingText, darkButtonStyle, NAVIGATION_LINKS } from "@/lib/styles";
+import { NAVIGATION_LINKS } from "@/lib/styles";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -31,7 +31,6 @@ function scrollToSection(
 interface NavLinkProps {
   name: string;
   href: string;
-  onNavigate?: () => void;
 }
 
 function DesktopNavLink({ name, href }: NavLinkProps) {
@@ -39,20 +38,26 @@ function DesktopNavLink({ name, href }: NavLinkProps) {
     <a
       href={href}
       onClick={(e) => scrollToSection(e, href)}
-      className="relative text-sm tracking-wider uppercase font-medium group"
-      style={{ fontFamily: "var(--font-outfit)", color: "var(--brand-charcoal)" }}
+      className="relative text-sm tracking-wider uppercase font-medium group transition-colors duration-300"
+      style={{
+        fontFamily: "var(--font-sans)",
+        color: "var(--brand-dark)",
+      }}
     >
       {name}
       <span
         className="absolute -bottom-1 left-0 w-0 h-px group-hover:w-full transition-all duration-300 origin-left"
-        style={{ backgroundColor: "var(--brand-accent)" }}
+        style={{ backgroundColor: "var(--brand-cta)" }}
       />
     </a>
   );
 }
 
-interface MobileNavLinkProps extends NavLinkProps {
+interface MobileNavLinkProps {
+  name: string;
+  href: string;
   index: number;
+  onNavigate?: () => void;
 }
 
 function MobileNavLink({ name, href, index, onNavigate }: MobileNavLinkProps) {
@@ -64,7 +69,7 @@ function MobileNavLink({ name, href, index, onNavigate }: MobileNavLinkProps) {
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: index * 0.1 }}
       className="block py-3 text-lg font-medium tracking-wide"
-      style={{ fontFamily: "var(--font-outfit)", color: "var(--brand-dark)" }}
+      style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
     >
       {name}
     </motion.a>
@@ -105,12 +110,18 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="relative group">
-            <span className="text-2xl font-normal tracking-tight" style={headingText}>
+            <span
+              className="text-2xl font-bold tracking-tight"
+              style={{
+                fontFamily: "var(--font-sans)",
+                color: "var(--brand-dark)",
+              }}
+            >
               Movimento
             </span>
             <div
               className="absolute -bottom-1 left-0 h-px w-0 group-hover:w-full transition-all duration-500 origin-left"
-              style={{ backgroundColor: "var(--brand-accent)" }}
+              style={{ backgroundColor: "var(--brand-cta)" }}
             />
           </Link>
 
@@ -120,7 +131,11 @@ export default function Header() {
               <DesktopNavLink key={item.name} {...item} />
             ))}
 
-            <ShimmerButton size="sm" className="px-6 py-5 text-xs tracking-widest uppercase font-medium">
+            <ShimmerButton
+              size="sm"
+              className="px-6 py-5 text-xs tracking-widest uppercase font-medium"
+              onClick={() => window.open("https://wa.me/393668719960?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento%20and%20join%20the%20studio.", "_blank")}
+            >
               Join Now
             </ShimmerButton>
           </div>
@@ -165,9 +180,9 @@ export default function Header() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md rounded-b-lg"
             >
-              <div className="py-6 space-y-4">
+              <div className="py-6 space-y-4 px-4">
                 {NAVIGATION_LINKS.map((item, index) => (
                   <MobileNavLink
                     key={item.name}
@@ -182,7 +197,13 @@ export default function Header() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: NAVIGATION_LINKS.length * 0.1 }}
                 >
-                  <ShimmerButton className="w-full mt-4 py-6 text-sm tracking-widest uppercase">
+                  <ShimmerButton
+                    className="w-full mt-4 py-6 text-sm tracking-widest uppercase"
+                    onClick={() => {
+                      closeMobileMenu();
+                      window.open("https://wa.me/393668719960?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento%20and%20join%20the%20studio.", "_blank");
+                    }}
+                  >
                     Join Now
                   </ShimmerButton>
                 </motion.div>
