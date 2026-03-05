@@ -1,15 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ShimmerButton from "@/components/shared/ShimmerButton";
 import { Button } from "@/components/ui/button";
 import { bodyText } from "@/lib/styles";
-
-const HOURS = [
-  { days: "Mon – Sat", time: "10:00 – 22:00", open: true },
-  { days: "Sunday", time: "Closed", open: false },
-];
 
 export default function HeroSection() {
   return (
@@ -100,100 +96,22 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT: Blue-grey info panel ────────────────────────────────── */}
+          {/* ── RIGHT: Studio photo ─────────────────────────────────────── */}
           <div className="lg:col-span-5 flex items-center pb-16 lg:pb-0">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="w-full rounded-lg p-10"
-              style={{
-                backgroundColor: "var(--brand-primary)",
-              }}
+              className="relative w-full rounded-lg overflow-hidden"
+              style={{ aspectRatio: "4/5" }}
             >
-              {/* Find Us label */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="tracking-[0.3em] uppercase mb-4 text-xs font-semibold"
-                style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.6)" }}
-              >
-                Find Us
-              </motion.p>
-
-              {/* Address */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                className="mb-6"
-              >
-                <p
-                  className="text-3xl leading-tight font-bold"
-                  style={{ fontFamily: "var(--font-sans)", color: "white" }}
-                >
-                  Al Sawaber<br />Tower 5
-                </p>
-                <p
-                  className="tracking-[0.2em] uppercase mt-2 text-xs font-medium"
-                  style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.55)" }}
-                >
-                  Kuwait City
-                </p>
-              </motion.div>
-
-              {/* Divider */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="h-px mb-6"
-                style={{ backgroundColor: "rgba(255,255,255,0.2)", transformOrigin: "left" }}
+              <Image
+                src="/images/hero-photo.jpg"
+                alt="Movimento studio"
+                fill
+                className="object-cover"
+                priority
               />
-
-              {/* Studio Hours label */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-                className="tracking-[0.3em] uppercase mb-4 text-xs font-semibold"
-                style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.6)" }}
-              >
-                Studio Hours
-              </motion.p>
-
-              {/* Hours rows */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="space-y-3"
-              >
-                {HOURS.map(({ days, time, open }) => (
-                  <div key={days} className="flex justify-between items-baseline gap-4">
-                    <span
-                      className="text-base font-semibold"
-                      style={{
-                        fontFamily: "var(--font-sans)",
-                        color: open ? "white" : "rgba(255,255,255,0.35)",
-                      }}
-                    >
-                      {days}
-                    </span>
-                    <span
-                      className="text-sm tracking-wide"
-                      style={{
-                        fontFamily: "var(--font-sans)",
-                        color: open ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0.3)",
-                        fontWeight: 400,
-                      }}
-                    >
-                      {time}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
             </motion.div>
           </div>
 
