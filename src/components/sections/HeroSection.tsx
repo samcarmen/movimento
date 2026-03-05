@@ -99,10 +99,10 @@ export default function HeroSection() {
           {/* ── RIGHT: Studio photo ─────────────────────────────────────── */}
           <div className="lg:col-span-5 flex items-center pb-16 lg:pb-0">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative w-full rounded-lg overflow-hidden"
+              className="relative w-full rounded-lg overflow-hidden min-h-[28rem]"
               style={{ aspectRatio: "4/5" }}
             >
               <Image
@@ -111,6 +111,7 @@ export default function HeroSection() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 1024px) 100vw, 42vw"
               />
             </motion.div>
           </div>
