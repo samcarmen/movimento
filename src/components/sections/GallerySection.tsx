@@ -29,11 +29,11 @@ const INSTAGRAM_URL = "https://www.instagram.com/movimento.kw";
 // Main component
 // ---------------------------------------------------------------------------
 
-export default function GallerySection() {
+export default function GallerySection({ noPaddingBottom = false }: { noPaddingBottom?: boolean }) {
   return (
     <section
       id="gallery"
-      className="section-padding relative"
+      className={`${noPaddingBottom ? "pt-16 md:pt-24 lg:pt-32 pb-0" : "section-padding"} relative`}
       style={{ backgroundColor: "var(--brand-light)" }}
     >
       <div className="max-w-7xl mx-auto container-padding">

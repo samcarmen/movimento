@@ -137,11 +137,11 @@ function ValueCard({ number, title, description, index }: ValueCardProps) {
 // Main component
 // ---------------------------------------------------------------------------
 
-export default function AboutSection() {
+export default function AboutSection({ noPaddingBottom = false }: { noPaddingBottom?: boolean }) {
   return (
     <section
       id="about"
-      className="section-padding relative"
+      className={`${noPaddingBottom ? "pt-16 md:pt-24 lg:pt-32 pb-0" : "section-padding"} relative`}
       style={{ backgroundColor: "var(--brand-accent)" }}
     >
       {/* Decorative arc — echoes logo circle emblem */}

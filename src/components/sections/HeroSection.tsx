@@ -7,14 +7,14 @@ import ShimmerButton from "@/components/shared/ShimmerButton";
 import { Button } from "@/components/ui/button";
 import { bodyText } from "@/lib/styles";
 
-export default function HeroSection() {
+export default function HeroSection({ noPaddingBottom = false }: { noPaddingBottom?: boolean }) {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-start lg:items-center"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
-      <div className="relative max-w-7xl mx-auto container-padding w-full pt-28 pb-16">
+      <div className={`relative max-w-7xl mx-auto container-padding w-full pt-28 ${noPaddingBottom ? "pb-0" : "pb-16"}`}>
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
 
           {/* ── LEFT: Text content ─────────────────────────────────────────── */}
@@ -102,8 +102,8 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative w-full rounded-lg overflow-hidden min-h-[28rem]"
-              style={{ aspectRatio: "4/5" }}
+              className="relative w-full rounded-full overflow-hidden min-h-[20rem]"
+              style={{ aspectRatio: "1/1" }}
             >
               <Image
                 src="/images/hero-photo.jpg"
