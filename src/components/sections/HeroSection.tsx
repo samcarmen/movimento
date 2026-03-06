@@ -16,7 +16,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
     >
       {/* Ghost watermark — actual logo icon, bleeding off left */}
       <div
-        className="absolute pointer-events-none select-none"
+        className="absolute hidden sm:block pointer-events-none select-none"
         style={{
           right: "-5%",
           top: "50%",
@@ -37,7 +37,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
       </div>
 
       {/* Content */}
-      <div className={`relative max-w-7xl mx-auto container-padding w-full pt-28 ${noPaddingBottom ? "pb-0" : "pb-16"}`}>
+      <div className={`relative max-w-7xl mx-auto container-padding w-full pt-20 sm:pt-24 md:pt-28 ${noPaddingBottom ? "pb-0" : "pb-12 sm:pb-16"}`}>
 
         {/* Eyebrow */}
         <motion.div
@@ -60,7 +60,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-[2.2rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] leading-[0.95] font-bold tracking-tight mb-10"
+          className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] leading-[0.95] font-bold tracking-tight mb-8 sm:mb-10"
           style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
         >
           Where<br />
@@ -74,7 +74,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-lg md:text-xl leading-relaxed max-w-sm mb-8"
+          className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xs sm:max-w-sm mb-8"
           style={bodyText}
         >
           Conscious movement for a body that works with you, not against you.

@@ -39,7 +39,7 @@ function StoryColumn({ title, paragraph, extraClass = "" }: StoryColumnProps) {
     <div className={`space-y-8 ${extraClass}`}>
       <div>
         <AccentDivider />
-        <h3 className="text-4xl md:text-5xl mb-8" style={headingText}>
+        <h3 className="text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8" style={headingText}>
           {title}
         </h3>
       </div>
@@ -79,18 +79,18 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
         <AnimatedSection>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 0.6, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-sm tracking-[0.3em] uppercase font-semibold mb-16"
-            style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)", opacity: 0.6 }}
+            className="text-sm tracking-[0.3em] uppercase font-semibold mb-12 sm:mb-16"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
           >
             About Movimento
           </motion.p>
         </AnimatedSection>
 
         {/* Two-column story layout */}
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 relative">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-32 relative">
           <div
             className="hidden lg:block absolute left-1/2 top-0 w-px h-full -translate-x-1/2"
             style={{ backgroundColor: "rgba(29,53,64,0.12)" }}

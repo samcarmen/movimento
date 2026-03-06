@@ -95,12 +95,12 @@ export default function WhoItsForSection() {
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
           <div className="mb-20 text-center">
-            <SectionHeading className="text-5xl md:text-6xl font-normal mb-8">
+            <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal mb-8">
               Who Is Movimento For?
             </SectionHeading>
 
             <p
-              className="text-2xl md:text-3xl max-w-4xl mx-auto font-light"
+              className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-light"
               style={{
                 fontFamily: "var(--font-sans)",
                 color: "var(--brand-dark)",
@@ -112,14 +112,13 @@ export default function WhoItsForSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-8">
           {AUDIENCES.map((audience, index) => (
             <AudienceCard key={audience.title} {...audience} index={index} />
           ))}
         </div>
 
         {/* Bottom message */}
-        <AnimatedSection>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +127,7 @@ export default function WhoItsForSection() {
             className="mt-20 text-center max-w-3xl mx-auto"
           >
             <p
-              className="text-xl md:text-2xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl leading-relaxed"
               style={bodyText}
             >
               A personalized approach means feeling{" "}
@@ -141,7 +140,6 @@ export default function WhoItsForSection() {
               — so you can rediscover ease, fluidity, and confidence day by day.
             </p>
           </motion.div>
-        </AnimatedSection>
       </div>
     </section>
   );

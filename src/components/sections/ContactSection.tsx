@@ -131,14 +131,14 @@ export default function ContactSection() {
           <div className="mb-20">
             <div className="mb-8">
               <SectionHeading
-                className="text-5xl md:text-6xl lg:text-7xl font-normal text-center"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-center"
                 style={{ color: "#fff" }}
               >
                 Get In Touch
               </SectionHeading>
             </div>
             <p
-              className="text-xl md:text-2xl text-center max-w-3xl mx-auto font-light"
+              className="text-base sm:text-lg md:text-xl text-center max-w-3xl mx-auto font-light"
               style={{ fontFamily: "var(--font-sans)", color: "var(--brand-light)" }}
             >
               Ready to move better and live better? Contact us to begin your personalized journey
@@ -151,7 +151,7 @@ export default function ContactSection() {
           <AnimatedSection>
             <div className="space-y-12">
               <div>
-                <h3 className="text-4xl md:text-5xl font-normal mb-8" style={{ ...headingText, color: "#fff" }}>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal mb-8" style={{ ...headingText, color: "#fff" }}>
                   Visit Our Studio
                 </h3>
 

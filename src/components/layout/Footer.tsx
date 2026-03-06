@@ -29,9 +29,9 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--brand-light)" }}>
       <WaveDivider topColor="var(--brand-dark)" bottomColor="var(--brand-light)" />
-      <div className="max-w-7xl mx-auto container-padding py-20">
+      <div className="max-w-7xl mx-auto container-padding py-12 sm:py-16 md:py-20">
 
-        <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-16 mb-10 sm:mb-16">
           {/* Brand */}
           <div className="flex items-start">
             <Image
@@ -39,7 +39,7 @@ export default function Footer() {
               alt="Movimento"
               width={160}
               height={48}
-              className="h-25 w-auto"
+              className="h-16 sm:h-20 w-auto"
             />
           </div>
 

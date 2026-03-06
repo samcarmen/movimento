@@ -36,7 +36,7 @@ export default function GallerySection({ noPaddingBottom = false }: { noPaddingB
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
           <div className="mb-16">
-            <SectionHeading className="text-5xl md:text-6xl font-normal text-center">
+            <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-center">
               Our Studio
             </SectionHeading>
           </div>
@@ -51,7 +51,7 @@ export default function GallerySection({ noPaddingBottom = false }: { noPaddingB
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="relative overflow-hidden rounded-lg min-h-[20rem]"
+              className="relative overflow-hidden rounded-lg min-h-[16rem] sm:min-h-[20rem]"
               style={{ aspectRatio: "1 / 1" }}
             >
               <Image
