@@ -9,8 +9,6 @@ import type { LucideIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "@/components/shared/AnimatedSection";
-import AccentDivider from "@/components/shared/AccentDivider";
-import SectionHeading from "@/components/shared/SectionHeading";
 import ShimmerButton from "@/components/shared/ShimmerButton";
 import { bodyText, headingText, labelText } from "@/lib/styles";
 
@@ -131,9 +129,12 @@ export default function ContactSection() {
         <AnimatedSection>
           <div className="mb-20">
             <div className="mb-8">
-              <SectionHeading className="text-5xl md:text-6xl lg:text-7xl font-normal text-center" style={{ color: "#fff" }}>
+              <h2
+                className="text-5xl md:text-6xl lg:text-7xl font-normal text-center"
+                style={{ fontFamily: "var(--font-sans)", color: "#fff" }}
+              >
                 Get In Touch
-              </SectionHeading>
+              </h2>
             </div>
             <p
               className="text-xl md:text-2xl text-center max-w-3xl mx-auto font-light"
@@ -149,7 +150,6 @@ export default function ContactSection() {
           <AnimatedSection>
             <div className="space-y-12">
               <div>
-                <AccentDivider animated={false} />
                 <h3 className="text-4xl md:text-5xl font-normal mb-8" style={{ ...headingText, color: "#fff" }}>
                   Visit Our Studio
                 </h3>
