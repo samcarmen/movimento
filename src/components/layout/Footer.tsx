@@ -12,7 +12,7 @@ function FooterLink({ name, href }: { name: string; href: string }) {
         {name}
         <span
           className="absolute -bottom-0.5 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
-          style={{ backgroundColor: "var(--brand-cta)" }}
+          style={{ backgroundColor: "var(--brand-primary)" }}
         />
       </a>
     </li>
@@ -77,7 +77,7 @@ export default function Footer() {
                 <Instagram size={20} className="relative z-10 group-hover:text-white transition-colors duration-300" />
                 <div
                   className="absolute inset-0 scale-0 group-hover:scale-100 transition-transform duration-300 rounded"
-                  style={{ backgroundColor: "var(--brand-cta)" }}
+                  style={{ backgroundColor: "var(--brand-primary)" }}
                 />
               </a>
             </div>

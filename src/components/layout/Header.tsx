@@ -47,7 +47,7 @@ function DesktopNavLink({ name, href }: NavLinkProps) {
       {name}
       <span
         className="absolute -bottom-1 left-0 w-0 h-px group-hover:w-full transition-all duration-300 origin-left"
-        style={{ backgroundColor: "var(--brand-cta)" }}
+        style={{ backgroundColor: "var(--brand-primary)" }}
       />
     </a>
   );
@@ -121,7 +121,7 @@ export default function Header() {
             </span>
             <div
               className="absolute -bottom-1 left-0 h-px w-0 group-hover:w-full transition-all duration-500 origin-left"
-              style={{ backgroundColor: "var(--brand-cta)" }}
+              style={{ backgroundColor: "var(--brand-primary)" }}
             />
           </Link>
 
