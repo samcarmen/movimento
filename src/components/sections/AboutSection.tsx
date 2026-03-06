@@ -60,7 +60,7 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
     <section
       id="about"
       className={`${noPaddingBottom ? "pt-16 md:pt-24 lg:pt-32 pb-0" : "section-padding"} relative`}
-      style={{ backgroundColor: "var(--brand-accent)" }}
+      style={{ backgroundColor: "var(--brand-tint)" }}
     >
       {/* Decorative arc — echoes logo circle emblem */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>

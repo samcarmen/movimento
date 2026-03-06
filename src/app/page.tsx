@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <>
       <HeroSection noPaddingBottom />
-      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-accent)" />
+      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-tint)" />
       <AboutSection noPaddingBottom />
-      <WaveDivider topColor="var(--brand-accent)" bottomColor="var(--brand-light)" />
+      <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-light)" />
       <GallerySection />
       <ValuesSection />
-      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-primary)" />
+      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-tint)" />
       <WhoItsForSection />
-      <WaveDivider topColor="var(--brand-primary)" bottomColor="var(--brand-dark)" />
+      <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-dark)" />
       <ContactSection />
     </>
   );

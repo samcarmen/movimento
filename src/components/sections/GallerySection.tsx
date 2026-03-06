@@ -13,12 +13,9 @@ import { bodyText } from "@/lib/styles";
 const GALLERY_PHOTOS = [
   { src: "/images/gallery/01.jpg", alt: "Movimento studio" },
   { src: "/images/gallery/02.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/03.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/04.jpg", alt: "Movimento studio" },
+  { src: "/images/gallery/08.jpg", alt: "Movimento studio" },
   { src: "/images/gallery/05.jpg", alt: "Movimento studio" },
   { src: "/images/gallery/06.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/07.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/08.jpg", alt: "Movimento studio" },
   { src: "/images/gallery/09.jpg", alt: "Movimento studio" },
 ];
 

@@ -7,6 +7,7 @@ import { z } from "zod";
 import { MapPin, Phone, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import SectionHeading from "@/components/shared/SectionHeading";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import ShimmerButton from "@/components/shared/ShimmerButton";
@@ -129,12 +130,12 @@ export default function ContactSection() {
         <AnimatedSection>
           <div className="mb-20">
             <div className="mb-8">
-              <h2
+              <SectionHeading
                 className="text-5xl md:text-6xl lg:text-7xl font-normal text-center"
-                style={{ fontFamily: "var(--font-sans)", color: "#fff" }}
+                style={{ color: "#fff" }}
               >
                 Get In Touch
-              </h2>
+              </SectionHeading>
             </div>
             <p
               className="text-xl md:text-2xl text-center max-w-3xl mx-auto font-light"

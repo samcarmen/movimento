@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Instagram } from "lucide-react";
-import { bodyText, headingText, labelText, NAVIGATION_LINKS } from "@/lib/styles";
+import { bodyText, labelText, NAVIGATION_LINKS } from "@/lib/styles";
 import WaveDivider from "@/components/shared/WaveDivider";
 
 // ---------------------------------------------------------------------------
@@ -32,17 +33,14 @@ export default function Footer() {
 
         <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <h3 className="text-3xl" style={headingText}>
-                Movimento
-              </h3>
-            </div>
-            <p className="leading-relaxed text-sm" style={bodyText}>
-              Move freely
-              <br />
-              Where quality meets movement.
-            </p>
+          <div className="flex items-start">
+            <Image
+              src="/images/logo.svg"
+              alt="Movimento"
+              width={160}
+              height={48}
+              className="h-25 w-auto"
+            />
           </div>
 
           {/* Quick links */}

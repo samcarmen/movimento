@@ -64,18 +64,18 @@ function AudienceCard({ icon: Icon, title, description, index }: AudienceCardPro
       <div
         className="flex items-center justify-center w-16 h-16 mb-6 rounded-full"
         style={{
-          backgroundColor: "rgba(255,255,255,0.15)",
-          color: "var(--brand-light)",
+          backgroundColor: "var(--brand-secondary)",
+          color: "var(--brand-primary)",
         }}
       >
         <Icon size={28} strokeWidth={1.5} />
       </div>
 
-      <h3 className="text-2xl md:text-3xl mb-4 font-normal" style={{ ...headingText, color: "#fff" }}>
+      <h3 className="text-2xl md:text-3xl mb-4 font-normal" style={headingText}>
         {title}
       </h3>
 
-      <p className="leading-relaxed" style={{ ...bodyText, color: "rgba(238,244,247,0.85)" }}>
+      <p className="leading-relaxed" style={bodyText}>
         {description}
       </p>
     </motion.div>
@@ -90,12 +90,12 @@ export default function WhoItsForSection() {
   return (
     <section
       className="section-padding relative"
-      style={{ backgroundColor: "var(--brand-primary)" }}
+      style={{ backgroundColor: "var(--brand-tint)" }}
     >
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
           <div className="mb-20 text-center">
-            <SectionHeading className="text-5xl md:text-6xl font-normal mb-8" style={{ color: "#fff" }}>
+            <SectionHeading className="text-5xl md:text-6xl font-normal mb-8">
               Who Is Movimento For?
             </SectionHeading>
 
@@ -103,7 +103,7 @@ export default function WhoItsForSection() {
               className="text-2xl md:text-3xl max-w-4xl mx-auto font-light"
               style={{
                 fontFamily: "var(--font-sans)",
-                color: "rgba(238,244,247,0.9)",
+                color: "var(--brand-dark)",
               }}
             >
               Movimento is for anyone who wants to move with intention and live with less
@@ -129,12 +129,12 @@ export default function WhoItsForSection() {
           >
             <p
               className="text-xl md:text-2xl leading-relaxed"
-              style={{ ...bodyText, color: "rgba(238,244,247,0.85)" }}
+              style={bodyText}
             >
               A personalized approach means feeling{" "}
               <span
                 className="font-medium italic"
-                style={{ color: "#fff" }}
+                style={{ color: "var(--brand-accent)" }}
               >
                 supported, never pushed
               </span>{" "}

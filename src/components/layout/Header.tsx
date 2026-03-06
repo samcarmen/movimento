@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -101,27 +102,21 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        }`}
       style={{ borderBottom: scrolled ? "1px solid rgba(0, 0, 0, 0.05)" : "none" }}
     >
       <nav className="max-w-7xl mx-auto container-padding">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="relative group">
-            <span
-              className="text-2xl font-bold tracking-tight"
-              style={{
-                fontFamily: "var(--font-sans)",
-                color: "var(--brand-dark)",
-              }}
-            >
-              Movimento
-            </span>
-            <div
-              className="absolute -bottom-1 left-0 h-px w-0 group-hover:w-full transition-all duration-500 origin-left"
-              style={{ backgroundColor: "var(--brand-primary)" }}
+            <Image
+              src="/images/logo.svg"
+              alt="Movimento"
+              width={160}
+              height={48}
+              className="h-25 w-auto"
+              priority
             />
           </Link>
 
