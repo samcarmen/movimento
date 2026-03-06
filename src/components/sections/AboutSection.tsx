@@ -112,15 +112,15 @@ function ValueCard({ number, title, description, index }: ValueCardProps) {
           className="text-8xl font-bold leading-none"
           style={{
             fontFamily: "var(--font-sans)",
-            color: "var(--brand-accent)",
-            opacity: 0.4,
+            color: "var(--brand-dark)",
+            opacity: 0.08,
           }}
         >
           {number}
         </motion.div>
       </div>
 
-      <AccentDivider className="w-16 h-px mb-6 origin-left" color="var(--brand-accent)" />
+      <AccentDivider className="w-16 h-px mb-6 origin-left" />
 
       <h4 className="text-3xl mb-4" style={headingText}>
         {title}
@@ -142,8 +142,20 @@ export default function AboutSection() {
     <section
       id="about"
       className="section-padding relative"
-      style={{ backgroundColor: "var(--brand-light)" }}
+      style={{ backgroundColor: "var(--brand-primary)" }}
     >
+      {/* Decorative arc — echoes logo circle emblem */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        <svg
+          className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-[0.07]"
+          viewBox="0 0 600 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="300" cy="300" r="280" stroke="var(--brand-dark)" strokeWidth="1.5" />
+        </svg>
+      </div>
+
       <div className="max-w-7xl mx-auto container-padding">
         {/* Hero statement */}
         <AnimatedSection>
@@ -169,7 +181,7 @@ export default function AboutSection() {
                 style={headingText}
               >
                 Discover our{" "}
-                <span className="relative inline-block" style={{ color: "var(--brand-primary)" }}>
+                <span className="relative inline-block" style={{ color: "var(--brand-cta)" }}>
                   innovative approach
                   <motion.div
                     initial={{ scaleX: 0 }}
@@ -177,7 +189,7 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="absolute bottom-2 left-0 w-full h-1 origin-left"
-                    style={{ backgroundColor: "var(--brand-accent)", opacity: 0.4 }}
+                    style={{ backgroundColor: "var(--brand-cta)", opacity: 0.5 }}
                   />
                 </span>
                 .
@@ -190,7 +202,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 mb-32 relative">
           <div
             className="hidden lg:block absolute left-1/2 top-0 w-px h-full -translate-x-1/2"
-            style={{ backgroundColor: "rgba(62,74,82,0.1)" }}
+            style={{ backgroundColor: "rgba(29,53,64,0.12)" }}
           />
 
           {STORY_COLUMNS.map((column, index) => (
@@ -225,14 +237,14 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="mt-32 text-center max-w-4xl mx-auto py-16 border-t border-b"
-            style={{ borderColor: "rgba(62,74,82,0.15)" }}
+            style={{ borderColor: "rgba(29,53,64,0.12)" }}
           >
             <p
               className="text-3xl md:text-4xl lg:text-5xl leading-relaxed"
               style={serifText}
             >
               From method to practice,{" "}
-              <span className="font-semibold" style={{ color: "var(--brand-primary)" }}>
+              <span className="font-semibold" style={{ color: "var(--brand-cta)" }}>
                 precision in every step
               </span>
               .
