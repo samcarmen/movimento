@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import { bodyText, headingText, labelText, NAVIGATION_LINKS } from "@/lib/styles";
+import WaveDivider from "@/components/shared/WaveDivider";
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -25,13 +26,9 @@ function FooterLink({ name, href }: { name: string; href: string }) {
 
 export default function Footer() {
   return (
-    <footer
-      className="relative border-t"
-      style={{ borderColor: "rgba(62,74,82,0.1)", backgroundColor: "var(--brand-light)" }}
-    >
+    <footer style={{ backgroundColor: "var(--brand-light)" }}>
+      <WaveDivider topColor="var(--brand-dark)" bottomColor="var(--brand-light)" />
       <div className="max-w-7xl mx-auto container-padding py-20">
-        {/* Plain thin divider */}
-        <div className="h-px w-full mb-16" style={{ backgroundColor: "var(--brand-accent)", opacity: 0.4 }} />
 
         <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
           {/* Brand */}
@@ -85,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t text-center" style={{ borderColor: "rgba(62,74,82,0.08)" }}>
+        <div className="pt-8 text-center">
           <p className="text-sm" style={bodyText}>
             &copy; {new Date().getFullYear()} Movimento. All rights reserved.
           </p>

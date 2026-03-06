@@ -236,8 +236,7 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-32 text-center max-w-4xl mx-auto py-16 border-t border-b"
-            style={{ borderColor: "rgba(29,53,64,0.12)" }}
+            className="mt-32 text-center max-w-4xl mx-auto py-16"
           >
             <p
               className="text-3xl md:text-4xl lg:text-5xl leading-relaxed"
