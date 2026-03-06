@@ -50,15 +50,15 @@
 :root {
   --radius: 0.625rem;
 
-  /* Posture Correction Studio Palette */
-  --brand-primary: #5F8FA6; /* Muted blue-grey */
-  --brand-secondary: #9FB7A5; /* Sage */
-  --brand-accent: #9FB7A5; /* Sage — dividers, icons, accents */
-  --brand-dark: #3E4A52; /* Soft slate — all text */
-  --brand-light: #F4F7F9; /* Medical white — main background */
-  --brand-charcoal: #3E4A52; /* Same as text-primary */
-  --brand-cream: #F4F7F9; /* Same as bg-main */
-  --brand-cta: #A96040; /* Terracotta — CTA buttons only — 4.7:1 contrast with white */
+  /* Monochromatic Blue-Grey Palette */
+  --brand-primary: #5F8FA6;   /* Logo blue-grey — About bg, icons, accents */
+  --brand-secondary: #7AAEC5; /* Light blue-grey — in sync with accent */
+  --brand-accent: #7AAEC5;    /* Light blue-grey — dividers, decorative lines */
+  --brand-dark: #1D3540;      /* Deep blue-grey — all text, Contact bg */
+  --brand-light: #EEF4F7;     /* Barely-blue tint — main backgrounds */
+  --brand-charcoal: #1D3540;  /* In sync with dark */
+  --brand-cream: #EEF4F7;     /* In sync with light */
+  --brand-cta: #1D3540;       /* Deep blue-grey — fully monochromatic CTAs */
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
