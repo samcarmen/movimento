@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
+import ValuesSection from "@/components/sections/ValuesSection";
 import WhoItsForSection from "@/components/sections/WhoItsForSection";
 import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -12,9 +13,11 @@ export default function Home() {
       <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-accent)" />
       <AboutSection noPaddingBottom />
       <WaveDivider topColor="var(--brand-accent)" bottomColor="var(--brand-light)" />
+      <GallerySection />
+      <ValuesSection />
+      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-primary)" />
       <WhoItsForSection />
-      <GallerySection noPaddingBottom />
-      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-dark)" />
+      <WaveDivider topColor="var(--brand-primary)" bottomColor="var(--brand-dark)" />
       <ContactSection />
     </>
   );

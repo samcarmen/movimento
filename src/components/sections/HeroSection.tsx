@@ -14,6 +14,41 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
       className="relative min-h-screen flex items-start lg:items-center"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
+      {/* Ghost watermark — logo figure, bleeding off left edge */}
+      <div
+        className="absolute top-1/2 pointer-events-none select-none"
+        style={{
+          left: "-140px",
+          transform: "translateY(-50%)",
+          width: "560px",
+          opacity: 0.07,
+          color: "var(--brand-primary)",
+        }}
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Outer circle */}
+          <circle cx="50" cy="50" r="47" stroke="currentColor" strokeWidth="2.5" />
+          {/* Head */}
+          <circle cx="50" cy="17" r="5.5" fill="currentColor" />
+          {/* Arms — wide sweep from centre out to each side */}
+          <path
+            d="M 10,46 C 25,41 40,30 50,27 C 60,30 75,41 90,46"
+            stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"
+          />
+          {/* Left leg — curves outward and down */}
+          <path
+            d="M 42,55 C 35,58 27,65 24,76 C 23,82 28,85 34,82"
+            stroke="currentColor" strokeWidth="5" strokeLinecap="round"
+          />
+          {/* Right leg — mirror of left */}
+          <path
+            d="M 58,55 C 65,58 73,65 76,76 C 77,82 72,85 66,82"
+            stroke="currentColor" strokeWidth="5" strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
       <div className={`relative max-w-7xl mx-auto container-padding w-full pt-28 ${noPaddingBottom ? "pb-0" : "pb-16"}`}>
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
 
@@ -58,8 +93,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
               className="text-lg md:text-xl leading-relaxed max-w-lg mb-10"
               style={bodyText}
             >
-              A studio dedicated to conscious movement, helping you restore balance,
-              stability, and freedom in your body. Move better. Live better.
+              Conscious movement for a body that works with you, not against you.
             </motion.p>
 
             {/* CTA Buttons */}

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { Resend } from "resend";
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -8,27 +9,21 @@ const contactSchema = z.object({
   message: z.string().min(10),
 });
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const validatedData = contactSchema.parse(body);
+    const { name, email, phone, message } = contactSchema.parse(body);
 
-    // TODO: Implement email sending logic
-    // Options:
-    // 1. Resend (https://resend.com) - Modern, developer-friendly
-    // 2. SendGrid
-    // 3. Nodemailer with SMTP
+    await resend.emails.send({
+      from: "Movimento Contact <onboarding@resend.dev>",
+      to: "info@movimento-studio.com",
+      subject: `New enquiry from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
+    });
 
-    // For now, log the data (replace with actual email service)
-    console.log("Contact form submission:", validatedData);
-
-    // Simulate email sending delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    return NextResponse.json(
-      { message: "Message sent successfully" },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
@@ -37,9 +32,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

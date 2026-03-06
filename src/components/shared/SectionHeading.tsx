@@ -1,11 +1,13 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { headingText } from "@/lib/styles";
 
 interface SectionHeadingProps {
   children: React.ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -15,6 +17,7 @@ interface SectionHeadingProps {
 export default function SectionHeading({
   children,
   className = "text-5xl md:text-6xl font-normal text-center",
+  style,
 }: SectionHeadingProps) {
   return (
     <div className="flex items-center gap-6">
@@ -26,7 +29,7 @@ export default function SectionHeading({
         className="h-px flex-1 origin-left"
         style={{ backgroundColor: "var(--brand-accent)" }}
       />
-      <h2 className={className} style={headingText}>
+      <h2 className={className} style={{ ...headingText, ...style }}>
         {children}
       </h2>
       <motion.div

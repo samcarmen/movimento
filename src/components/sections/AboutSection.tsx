@@ -3,51 +3,23 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import AccentDivider from "@/components/shared/AccentDivider";
-import SectionHeading from "@/components/shared/SectionHeading";
-import { bodyText, headingText, serifText } from "@/lib/styles";
+import { bodyText, headingText } from "@/lib/styles";
 
 // ---------------------------------------------------------------------------
 // Data
 // ---------------------------------------------------------------------------
 
-const VALUES = [
-  {
-    number: "01",
-    title: "Italian Tools & Know-How",
-    description:
-      "All our equipment is designed and manufactured in Italy, selected for its reliability, durability, and coherence with the Canali Postural Method.",
-  },
-  {
-    number: "02",
-    title: "Professional Guidance",
-    description:
-      "Each session is led with competence, care, and clarity. Continuous training, methodical work, and attention define the quality of every session.",
-  },
-  {
-    number: "03",
-    title: "Tailored Programs",
-    description:
-      "A personalized approach means feeling supported, never pushed — so you can rediscover ease, fluidity, and confidence day by day.",
-  },
-] as const;
-
 const STORY_COLUMNS = [
   {
     title: "Our Method",
-    lead: "Movimento works with the Canali Postural Method, an internationally recognized approach to posture and movement education.",
-    paragraphs: [
-      "Combining biomechanical principles with precision, progression, and respect for the body's natural organization, this method focuses on spinal stability and muscular balance.",
-      "Through targeted, progressive exercises, we improve the way your body moves in everyday life — helping you restore ease, fluidity, and confidence.",
-    ],
+    paragraph:
+      "We work with the Canali Postural Method — an internationally recognized approach combining biomechanical principles with precision and respect for the body's natural organization. Through targeted, progressive exercises, we improve the way your body moves in everyday life.",
     extraClass: "",
   },
   {
     title: "Our Approach",
-    lead: "Every body is different. That's why each program is built around you.",
-    paragraphs: [
-      "Every person has a unique body, story, and way of moving. At Movimento, each program begins with careful listening and observation.",
-      "Exercises and training sessions are designed around your needs, goals, and abilities — respecting your body's timing and supporting gradual, sustainable progress.",
-    ],
+    paragraph:
+      "Every person has a unique body, story, and way of moving. Each program begins with careful listening and observation, then is built around your needs, goals, and abilities — respecting your body's timing and supporting gradual, sustainable progress.",
     extraClass: "lg:pt-32",
   },
 ] as const;
@@ -58,12 +30,11 @@ const STORY_COLUMNS = [
 
 interface StoryColumnProps {
   title: string;
-  lead: string;
-  paragraphs: readonly string[];
+  paragraph: string;
   extraClass?: string;
 }
 
-function StoryColumn({ title, lead, paragraphs, extraClass = "" }: StoryColumnProps) {
+function StoryColumn({ title, paragraph, extraClass = "" }: StoryColumnProps) {
   return (
     <div className={`space-y-8 ${extraClass}`}>
       <div>
@@ -74,62 +45,9 @@ function StoryColumn({ title, lead, paragraphs, extraClass = "" }: StoryColumnPr
       </div>
 
       <div className="space-y-6 text-lg leading-relaxed" style={bodyText}>
-        <p className="text-2xl leading-relaxed font-semibold" style={{ color: "var(--brand-dark)" }}>
-          {lead}
-        </p>
-        {paragraphs.map((text) => (
-          <p key={text.slice(0, 40)}>{text}</p>
-        ))}
+        <p>{paragraph}</p>
       </div>
     </div>
-  );
-}
-
-interface ValueCardProps {
-  number: string;
-  title: string;
-  description: string;
-  index: number;
-}
-
-function ValueCard({ number, title, description, index }: ValueCardProps) {
-  const stagger = index * 0.15;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: stagger, duration: 0.6 }}
-      className="group"
-    >
-      <div className="mb-6 overflow-hidden">
-        <motion.div
-          initial={{ y: 100 }}
-          whileInView={{ y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: stagger + 0.2, duration: 0.6 }}
-          className="text-8xl font-bold leading-none"
-          style={{
-            fontFamily: "var(--font-sans)",
-            color: "var(--brand-dark)",
-            opacity: 0.08,
-          }}
-        >
-          {number}
-        </motion.div>
-      </div>
-
-      <AccentDivider className="w-16 h-px mb-6 origin-left" />
-
-      <h4 className="text-3xl mb-4" style={headingText}>
-        {title}
-      </h4>
-
-      <p className="leading-relaxed" style={bodyText}>
-        {description}
-      </p>
-    </motion.div>
   );
 }
 
@@ -157,49 +75,22 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
       </div>
 
       <div className="max-w-7xl mx-auto container-padding">
-        {/* Hero statement */}
+        {/* Section label */}
         <AnimatedSection>
-          <div className="mb-32 relative">
-            <div className="relative z-10 max-w-5xl">
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-8"
-                style={serifText}
-              >
-                Move better, not just more.
-              </motion.p>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-6xl md:text-7xl lg:text-8xl"
-                style={headingText}
-              >
-                Discover our{" "}
-                <span className="relative inline-block" style={{ color: "var(--brand-cta)" }}>
-                  innovative approach
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="absolute bottom-2 left-0 w-full h-1 origin-left"
-                    style={{ backgroundColor: "var(--brand-cta)", opacity: 0.5 }}
-                  />
-                </span>
-                .
-              </motion.h2>
-            </div>
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm tracking-[0.3em] uppercase font-semibold mb-16"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)", opacity: 0.6 }}
+          >
+            About Movimento
+          </motion.p>
         </AnimatedSection>
 
         {/* Two-column story layout */}
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 mb-32 relative">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 relative">
           <div
             className="hidden lg:block absolute left-1/2 top-0 w-px h-full -translate-x-1/2"
             style={{ backgroundColor: "rgba(29,53,64,0.12)" }}
@@ -211,45 +102,6 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
             </AnimatedSection>
           ))}
         </div>
-
-        {/* Values grid */}
-        <AnimatedSection>
-          <div className="mb-20">
-            <div className="mb-16">
-              <SectionHeading className="text-5xl md:text-6xl font-bold text-center">
-                What Sets Us Apart
-              </SectionHeading>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-16 lg:gap-20">
-              {VALUES.map((value, index) => (
-                <ValueCard key={value.number} {...value} index={index} />
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Closing statement */}
-        <AnimatedSection>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-32 text-center max-w-4xl mx-auto py-16"
-          >
-            <p
-              className="text-3xl md:text-4xl lg:text-5xl leading-relaxed"
-              style={serifText}
-            >
-              From method to practice,{" "}
-              <span className="font-semibold" style={{ color: "var(--brand-cta)" }}>
-                precision in every step
-              </span>
-              .
-            </p>
-          </motion.div>
-        </AnimatedSection>
       </div>
     </section>
   );

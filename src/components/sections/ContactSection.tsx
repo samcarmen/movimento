@@ -30,9 +30,9 @@ type ContactFormData = z.infer<typeof contactSchema>;
 // ---------------------------------------------------------------------------
 
 const CONTACT_DETAILS: { icon: LucideIcon; label: string; value: string }[] = [
-  { icon: MapPin, label: "Address", value: "Al Sawaber Tower 5, Kuwait City" },
-  { icon: Phone, label: "Phone", value: "(TBC)" },
-  { icon: Mail, label: "Email", value: "(TBC)" },
+  { icon: MapPin, label: "Address", value: "Kuwait City, Al Sawaber Tower 5, 10th Floor, office n.2" },
+  { icon: Phone, label: "Phone", value: "+965 66130788" },
+  { icon: Mail, label: "Email", value: "info@movimento-studio.com" },
 ];
 
 // ---------------------------------------------------------------------------
