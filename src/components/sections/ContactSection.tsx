@@ -56,10 +56,10 @@ function ContactDetail({ icon: Icon, label, value }: ContactDetailProps) {
         style={{ color: "var(--brand-accent)" }}
       />
       <div>
-        <p className="text-sm tracking-widest uppercase mb-2" style={labelText}>
+        <p className="text-sm tracking-widest uppercase mb-2" style={{ ...labelText, color: "rgba(244,247,249,0.6)" }}>
           {label}
         </p>
-        <p style={bodyText}>{value}</p>
+        <p style={{ ...bodyText, color: "var(--brand-light)" }}>{value}</p>
       </div>
     </div>
   );
@@ -124,20 +124,20 @@ export default function ContactSection() {
     <section
       id="contact"
       className="section-padding relative"
-      style={{ backgroundColor: "var(--brand-light)" }}
+      style={{ backgroundColor: "var(--brand-dark)" }}
     >
       <div className="max-w-7xl mx-auto container-padding">
         {/* Section header */}
         <AnimatedSection>
           <div className="mb-20">
             <div className="mb-8">
-              <SectionHeading className="text-5xl md:text-6xl lg:text-7xl font-normal text-center">
+              <SectionHeading className="text-5xl md:text-6xl lg:text-7xl font-normal text-center" style={{ color: "#fff" }}>
                 Get In Touch
               </SectionHeading>
             </div>
             <p
               className="text-xl md:text-2xl text-center max-w-3xl mx-auto font-light"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--brand-light)" }}
             >
               Ready to move better and live better? Contact us to begin your personalized journey
             </p>
@@ -150,7 +150,7 @@ export default function ContactSection() {
             <div className="space-y-12">
               <div>
                 <AccentDivider animated={false} />
-                <h3 className="text-4xl md:text-5xl font-normal mb-8" style={headingText}>
+                <h3 className="text-4xl md:text-5xl font-normal mb-8" style={{ ...headingText, color: "#fff" }}>
                   Visit Our Studio
                 </h3>
 
@@ -171,6 +171,7 @@ export default function ContactSection() {
                   placeholder="Your Name"
                   {...register("name")}
                   className={errors.name ? "border-red-500" : ""}
+                  style={{ backgroundColor: "#fff", color: "var(--brand-dark)" }}
                 />
               </FormField>
 
@@ -180,6 +181,7 @@ export default function ContactSection() {
                   placeholder="Email Address"
                   {...register("email")}
                   className={errors.email ? "border-red-500" : ""}
+                  style={{ backgroundColor: "#fff", color: "var(--brand-dark)" }}
                 />
               </FormField>
 
@@ -189,6 +191,7 @@ export default function ContactSection() {
                   placeholder="Phone Number"
                   {...register("phone")}
                   className={errors.phone ? "border-red-500" : ""}
+                  style={{ backgroundColor: "#fff", color: "var(--brand-dark)" }}
                 />
               </FormField>
 
@@ -198,6 +201,7 @@ export default function ContactSection() {
                   rows={6}
                   {...register("message")}
                   className={errors.message ? "border-red-500" : ""}
+                  style={{ backgroundColor: "#fff", color: "var(--brand-dark)" }}
                 />
               </FormField>
 
@@ -205,6 +209,7 @@ export default function ContactSection() {
                 type="submit"
                 className="w-full py-6 text-sm tracking-widest uppercase font-medium"
                 disabled={isSubmitting}
+                style={{ backgroundColor: "var(--brand-light)", color: "var(--brand-dark)" }}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </ShimmerButton>
