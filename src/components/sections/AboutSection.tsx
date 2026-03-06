@@ -142,7 +142,7 @@ export default function AboutSection() {
     <section
       id="about"
       className="section-padding relative"
-      style={{ backgroundColor: "var(--brand-primary)" }}
+      style={{ backgroundColor: "var(--brand-accent)" }}
     >
       {/* Decorative arc — echoes logo circle emblem */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
