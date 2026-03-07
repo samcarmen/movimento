@@ -20,7 +20,7 @@ export default function SectionHeading({
   style,
 }: SectionHeadingProps) {
   return (
-    <div className="flex items-center gap-4 sm:gap-6">
+    <div className="flex items-center justify-center gap-4 sm:gap-6">
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
