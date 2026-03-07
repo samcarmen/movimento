@@ -111,7 +111,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="relative group outline-none focus:outline-none" style={{ WebkitTapHighlightColor: "transparent" }}>
             <Image
-              src="/images/logo.svg"
+              src="/images/logo_transparent.png"
               alt="Movimento"
               width={160}
               height={48}
