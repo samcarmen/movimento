@@ -75,7 +75,7 @@ function AudienceCard({ icon: Icon, title, description, index }: AudienceCardPro
         {title}
       </h3>
 
-      <p className="leading-relaxed" style={bodyText}>
+      <p className="leading-relaxed text-pretty" style={bodyText}>
         {description}
       </p>
     </motion.div>
@@ -100,14 +100,14 @@ export default function WhoItsForSection() {
             </SectionHeading>
 
             <p
-              className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-light"
+              className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-light text-pretty"
               style={{
                 fontFamily: "var(--font-sans)",
                 color: "var(--brand-dark)",
               }}
             >
               Movimento is for anyone who wants to move with intention and live with less
-              limitation
+              limitation.
             </p>
           </div>
         </AnimatedSection>
@@ -127,7 +127,7 @@ export default function WhoItsForSection() {
             className="mt-20 text-center max-w-3xl mx-auto"
           >
             <p
-              className="text-base sm:text-lg md:text-xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl leading-relaxed text-pretty"
               style={bodyText}
             >
               A personalized approach means feeling{" "}

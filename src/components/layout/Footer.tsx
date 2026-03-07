@@ -30,9 +30,7 @@ export default function Footer() {
     <footer style={{ backgroundColor: "var(--brand-light)" }}>
       <WaveDivider topColor="var(--brand-dark)" bottomColor="var(--brand-light)" />
       <div className="max-w-7xl mx-auto container-padding py-5 sm:py-6">
-        <div
-          className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left"
-        >
+        <div className="flex flex-col items-center gap-4 text-center sm:grid sm:grid-cols-3 sm:items-center sm:text-left">
           <p className="text-xs sm:text-sm" style={bodyText}>
             &copy; {new Date().getFullYear()} Movimento
           </p>
@@ -47,7 +45,7 @@ export default function Footer() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300 hover:bg-[var(--brand-dark)] hover:text-[var(--brand-light)]"
+            className="flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300 hover:bg-[var(--brand-dark)] hover:text-[var(--brand-light)] sm:justify-self-end"
             style={{ borderColor: "rgba(29,53,64,0.16)", color: "var(--brand-dark)" }}
             aria-label="Follow us on Instagram"
           >

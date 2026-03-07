@@ -138,10 +138,10 @@ export default function ContactSection() {
               </SectionHeading>
             </div>
             <p
-              className="text-base sm:text-lg md:text-xl text-center max-w-3xl mx-auto font-light"
+              className="text-base sm:text-lg md:text-xl text-center max-w-3xl mx-auto font-light text-pretty"
               style={{ fontFamily: "var(--font-sans)", color: "var(--brand-light)" }}
             >
-              Ready to move better and live better? Contact us to begin your personalized journey
+              Ready to move better and live better?<br />Contact us to begin your personalized journey.
             </p>
           </div>
         </AnimatedSection>

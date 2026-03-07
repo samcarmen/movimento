@@ -94,7 +94,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-base sm:text-lg md:text-xl leading-relaxed mb-10"
+            className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 text-pretty"
             style={bodyText}
           >
             Posture correction and body alignment, Kuwait.

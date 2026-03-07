@@ -45,7 +45,7 @@ function StoryColumn({ title, paragraph, extraClass = "" }: StoryColumnProps) {
       </div>
 
       <div className="space-y-6 text-lg leading-relaxed" style={bodyText}>
-        <p>{paragraph}</p>
+        <p className="text-pretty">{paragraph}</p>
       </div>
     </div>
   );
