@@ -10,10 +10,10 @@ import { bodyText, headingText } from "@/lib/styles";
 const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.";
 
 const SLIDES = [
-  "/images/gallery/09.jpg",
-  "/images/gallery/08.jpg",
-  "/images/gallery/06.jpg",
-  "/images/hero-photo.jpg",
+  { src: "/images/gallery/09.jpg", alt: "Movimento studio session" },
+  { src: "/images/gallery/08.jpg", alt: "Postural alignment training" },
+  { src: "/images/gallery/06.jpg", alt: "Movement session at Movimento studio" },
+  { src: "/images/hero-photo.jpg", alt: "Movimento Kuwait studio" },
 ];
 
 export default function HeroSection() {
@@ -122,8 +122,8 @@ export default function HeroSection() {
               className="absolute inset-0"
             >
               <Image
-                src={SLIDES[current]}
-                alt=""
+                src={SLIDES[current].src}
+                alt={SLIDES[current].alt}
                 fill
                 className="object-cover object-center"
                 priority={current === 0}
@@ -134,8 +134,9 @@ export default function HeroSection() {
 
           {/* Prev button */}
           <button
+            type="button"
             onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-200"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             style={{ backgroundColor: "var(--brand-dark)" }}
             aria-label="Previous image"
           >
@@ -144,8 +145,9 @@ export default function HeroSection() {
 
           {/* Next button */}
           <button
+            type="button"
             onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-200"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             style={{ backgroundColor: "var(--brand-dark)" }}
             aria-label="Next image"
           >
@@ -157,6 +159,7 @@ export default function HeroSection() {
             {SLIDES.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => setCurrent(i)}
                 className="rounded-full transition-all duration-300"
                 style={{
