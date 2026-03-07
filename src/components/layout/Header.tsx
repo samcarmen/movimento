@@ -115,7 +115,7 @@ export default function Header() {
               alt="Movimento"
               width={160}
               height={48}
-              className="h-25 w-auto"
+              className="h-25 w-auto outline-none border-none"
               priority
             />
           </Link>

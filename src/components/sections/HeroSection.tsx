@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ShimmerButton from "@/components/shared/ShimmerButton";
-import { Button } from "@/components/ui/button";
 import { bodyText } from "@/lib/styles";
 
 export default function HeroSection({ noPaddingBottom = false }: { noPaddingBottom?: boolean }) {
   return (
     <section
       id="hero"
-      className="relative flex flex-col justify-start md:justify-center min-h-[100dvh] md:min-h-0"
+      className="relative flex flex-col justify-start md:justify-center min-h-[100dvh]"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
       {/* Ghost watermark — centred logo */}
@@ -55,10 +54,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
           className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] leading-[0.95] font-bold tracking-tight mb-8 sm:mb-10"
           style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
         >
-          Where<br />
-          Quality<br />
-          Meets<br />
-          Movement
+          Move without pain.
         </motion.h1>
 
         {/* Tagline */}
@@ -69,15 +65,14 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
           className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mb-10"
           style={bodyText}
         >
-          Conscious movement for a body that works with you, not against you.
+          Posture correction and body alignment, Kuwait.
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.75 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <ShimmerButton
             size="lg"
@@ -89,20 +84,6 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
               <ArrowRight size={18} />
             </span>
           </ShimmerButton>
-
-          <Button
-            size="lg"
-            variant="outline"
-            className="px-8 py-6 text-base font-medium tracking-wide border-2 bg-transparent hover:bg-black/5"
-            style={{
-              borderColor: "var(--brand-dark)",
-              color: "var(--brand-dark)",
-              fontFamily: "var(--font-sans)",
-            }}
-            onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Our Philosophy
-          </Button>
         </motion.div>
 
       </div>
