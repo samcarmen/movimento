@@ -1,13 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
 import ShimmerButton from "@/components/shared/ShimmerButton";
 import { bodyText, headingText } from "@/lib/styles";
 
 const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.";
 
+const SLIDES = [
+  "/images/gallery/09.jpg",
+  "/images/gallery/08.jpg",
+  "/images/gallery/06.jpg",
+  "/images/hero-photo.jpg",
+];
+
 export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const next = useCallback(() => setCurrent((i) => (i + 1) % SLIDES.length), []);
+  const prev = useCallback(() => setCurrent((i) => (i - 1 + SLIDES.length) % SLIDES.length), []);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
   return (
     <section
       id="hero"
@@ -92,8 +110,65 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Right panel — image carousel (added in next task) */}
-        <div className="hidden lg:flex relative overflow-hidden min-h-full" />
+        {/* Right panel — image carousel */}
+        <div className="hidden lg:block relative overflow-hidden">
+          <AnimatePresence mode="sync">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={SLIDES[current]}
+                alt=""
+                fill
+                className="object-cover object-center"
+                priority={current === 0}
+                sizes="50vw"
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Prev button */}
+          <button
+            onClick={prev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-200"
+            style={{ backgroundColor: "var(--brand-dark)" }}
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={20} color="white" />
+          </button>
+
+          {/* Next button */}
+          <button
+            onClick={next}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-200"
+            style={{ backgroundColor: "var(--brand-dark)" }}
+            aria-label="Next image"
+          >
+            <ChevronRight size={20} color="white" />
+          </button>
+
+          {/* Dot indicators */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === current ? "24px" : "8px",
+                  height: "8px",
+                  backgroundColor: i === current ? "white" : "rgba(255,255,255,0.5)",
+                }}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
 
       </div>
 
