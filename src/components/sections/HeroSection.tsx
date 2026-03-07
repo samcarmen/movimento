@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ShimmerButton from "@/components/shared/ShimmerButton";
@@ -11,30 +10,21 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
   return (
     <section
       id="hero"
-      className="relative flex flex-col justify-center"
+      className="relative flex flex-col justify-center min-h-[100dvh] md:min-h-0"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
-      {/* Ghost watermark — actual logo icon, bleeding off left */}
+      {/* Ghost watermark — SVG logo as CSS background for fixed positioning */}
       <div
-        className="absolute pointer-events-none select-none"
+        className="absolute inset-0 pointer-events-none select-none"
         style={{
-          right: "-5%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          width: "clamp(240px, 60%, 720px)",
-          opacity: 0.13,
-          mixBlendMode: "multiply",
+          backgroundImage: "url('/images/LOGO_WEB-03.jpg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right center",
+          backgroundSize: "50% auto",
+          opacity: 0.1,
         }}
         aria-hidden="true"
-      >
-        <Image
-          src="/LOGO_WEB-03.jpg"
-          alt=""
-          width={1200}
-          height={1200}
-          priority
-        />
-      </div>
+      />
 
       {/* Content */}
       <div className={`relative max-w-7xl mx-auto container-padding w-full pt-20 sm:pt-24 md:pt-28 ${noPaddingBottom ? "pb-0" : "pb-12 sm:pb-16"}`}>
@@ -91,10 +81,10 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
             <ShimmerButton
               size="lg"
               className="px-8 py-6 text-base font-medium tracking-wide"
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => window.open("https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.", "_blank")}
             >
               <span className="flex items-center gap-2">
-                Experience Movimento
+                Schedule a session
                 <ArrowRight size={18} />
               </span>
             </ShimmerButton>
