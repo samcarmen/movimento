@@ -20,13 +20,13 @@ export default function SectionHeading({
   style,
 }: SectionHeadingProps) {
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-4 sm:gap-6">
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="h-px flex-1 origin-left"
+        className="hidden sm:block h-px flex-1 min-w-0 origin-left"
         style={{ backgroundColor: "var(--brand-accent)" }}
       />
       <h2 className={className} style={{ ...headingText, ...style }}>
@@ -37,7 +37,7 @@ export default function SectionHeading({
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="h-px flex-1 origin-right"
+        className="hidden sm:block h-px flex-1 min-w-0 origin-right"
         style={{ backgroundColor: "var(--brand-accent)" }}
       />
     </div>

@@ -41,7 +41,7 @@ export default function HeroSection() {
       className="relative min-h-[100dvh]"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
-      {/* Ghost watermark — centred logo (mobile only) */}
+      {/* Ghost watermark — commented out, awkward on mobile
       <div
         className="lg:hidden absolute inset-0 pointer-events-none select-none"
         style={{
@@ -54,6 +54,7 @@ export default function HeroSection() {
         }}
         aria-hidden="true"
       />
+      */}
 
       {/* Full-height grid */}
       <div className="relative w-full min-h-[100dvh] grid lg:grid-cols-2">
