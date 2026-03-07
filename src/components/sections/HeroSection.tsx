@@ -18,13 +18,22 @@ const SLIDES = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
-  const next = useCallback(() => setCurrent((i) => (i + 1) % SLIDES.length), []);
-  const prev = useCallback(() => setCurrent((i) => (i - 1 + SLIDES.length) % SLIDES.length), []);
+  const [paused, setPaused] = useState(false);
+
+  const go = useCallback((index: number) => {
+    setCurrent(index);
+    setPaused(true);
+    setTimeout(() => setPaused(false), 8000);
+  }, []);
+
+  const next = useCallback(() => go((current + 1) % SLIDES.length), [current, go]);
+  const prev = useCallback(() => go((current - 1 + SLIDES.length) % SLIDES.length), [current, go]);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    if (paused) return;
+    const timer = setInterval(() => setCurrent((i) => (i + 1) % SLIDES.length), 5000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [paused]);
 
   return (
     <section
@@ -160,7 +169,7 @@ export default function HeroSection() {
               <button
                 key={i}
                 type="button"
-                onClick={() => setCurrent(i)}
+                onClick={() => go(i)}
                 className="rounded-full transition-all duration-300"
                 style={{
                   width: i === current ? "24px" : "8px",
