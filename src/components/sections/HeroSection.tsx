@@ -165,7 +165,7 @@ export default function HeroSection() {
           </button>
 
           {/* Dot indicators */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
             {SLIDES.map((_, i) => (
               <button
                 key={i}
@@ -183,6 +183,23 @@ export default function HeroSection() {
           </div>
         </div>
 
+      </div>
+
+      {/* Wave bottom — clips carousel image and transitions to About section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none"
+        style={{ lineHeight: 0, marginBottom: "-2px" }}
+      >
+        <svg
+          viewBox="0 0 1440 60"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+          style={{ display: "block", width: "100%", height: "clamp(32px, 4vw, 60px)" }}
+        >
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--brand-tint)" />
+        </svg>
       </div>
 
     </section>
