@@ -196,7 +196,7 @@ export default function Header() {
                     className="w-full mt-4 py-6 text-sm tracking-widest uppercase"
                     onClick={() => {
                       closeMobileMenu();
-                      window.open("https://wa.me/393668719960?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento%20and%20join%20the%20studio.", "_blank");
+                      window.open("https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20schedule%20a%20class%20at%20Movimento.", "_blank");
                     }}
                   >
                     Join Now

@@ -7,7 +7,7 @@ import { useState, useEffect, useCallback } from "react";
 import ShimmerButton from "@/components/shared/ShimmerButton";
 import { bodyText, headingText } from "@/lib/styles";
 
-const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.";
+const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20schedule%20a%20class%20at%20Movimento.";
 
 const SLIDES = [
   { src: "/images/gallery/09.jpg", alt: "Movimento studio session" },
