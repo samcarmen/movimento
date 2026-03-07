@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ShimmerButton from "@/components/shared/ShimmerButton";
-import { bodyText } from "@/lib/styles";
+import { bodyText, headingText } from "@/lib/styles";
+
+const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.";
 
 export default function HeroSection() {
   return (
@@ -54,7 +56,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] leading-[0.95] font-bold tracking-tight mb-8 sm:mb-10"
-            style={{ fontFamily: "var(--font-sans)", color: "var(--brand-dark)" }}
+            style={headingText}
           >
             Move without pain.
           </motion.h1>
@@ -79,7 +81,7 @@ export default function HeroSection() {
             <ShimmerButton
               size="lg"
               className="px-8 py-6 text-base font-medium tracking-wide"
-              onClick={() => window.open("https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.", "_blank")}
+              onClick={() => window.open(WA_URL, "_blank", "noopener,noreferrer")}
             >
               <span className="flex items-center gap-2">
                 Schedule a session
@@ -90,8 +92,8 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Right panel — carousel placeholder */}
-        <div className="hidden lg:flex relative overflow-hidden" />
+        {/* Right panel — image carousel (added in next task) */}
+        <div className="hidden lg:flex relative overflow-hidden min-h-full" />
 
       </div>
 
