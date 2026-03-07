@@ -10,31 +10,32 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
   return (
     <section
       id="hero"
-      className="relative flex flex-col justify-center min-h-[100dvh] md:min-h-0"
+      className="relative flex flex-col justify-start md:justify-center min-h-[100dvh] md:min-h-0"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
-      {/* Ghost watermark — SVG logo as CSS background for fixed positioning */}
+      {/* Ghost watermark — centred logo */}
       <div
         className="absolute inset-0 pointer-events-none select-none"
         style={{
           backgroundImage: "url('/images/LOGO_WEB-03.jpg')",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "right center",
-          backgroundSize: "50% auto",
-          opacity: 0.1,
+          backgroundPosition: "center center",
+          backgroundSize: "70% auto",
+          opacity: 0.15,
+          mixBlendMode: "multiply",
         }}
         aria-hidden="true"
       />
 
       {/* Content */}
-      <div className={`relative max-w-7xl mx-auto container-padding w-full pt-20 sm:pt-24 md:pt-28 ${noPaddingBottom ? "pb-0" : "pb-12 sm:pb-16"}`}>
+      <div className={`relative max-w-5xl mx-auto container-padding w-full pt-20 sm:pt-24 md:pt-28 text-center flex flex-col items-center ${noPaddingBottom ? "pb-0" : "pb-12 sm:pb-16"}`}>
 
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center gap-4 mb-8"
+          className="flex items-center justify-center gap-4 mb-8"
         >
           <div className="h-px w-12" style={{ backgroundColor: "var(--brand-accent)" }} />
           <span
@@ -43,6 +44,7 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
           >
             Move Freely
           </span>
+          <div className="h-px w-12" style={{ backgroundColor: "var(--brand-accent)" }} />
         </motion.div>
 
         {/* Main heading */}
@@ -64,46 +66,44 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xs sm:max-w-sm mb-8"
+          className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mb-10"
           style={bodyText}
         >
           Conscious movement for a body that works with you, not against you.
         </motion.p>
 
         {/* CTAs */}
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.75 }}
-            className="flex flex-col sm:flex-row gap-4"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.75 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <ShimmerButton
+            size="lg"
+            className="px-8 py-6 text-base font-medium tracking-wide"
+            onClick={() => window.open("https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.", "_blank")}
           >
-            <ShimmerButton
-              size="lg"
-              className="px-8 py-6 text-base font-medium tracking-wide"
-              onClick={() => window.open("https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Movimento.", "_blank")}
-            >
-              <span className="flex items-center gap-2">
-                Schedule a session
-                <ArrowRight size={18} />
-              </span>
-            </ShimmerButton>
+            <span className="flex items-center gap-2">
+              Schedule a session
+              <ArrowRight size={18} />
+            </span>
+          </ShimmerButton>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-base font-medium tracking-wide border-2 bg-transparent hover:bg-black/5"
-              style={{
-                borderColor: "var(--brand-dark)",
-                color: "var(--brand-dark)",
-                fontFamily: "var(--font-sans)",
-              }}
-              onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Our Philosophy
-            </Button>
-          </motion.div>
-        </div>
+          <Button
+            size="lg"
+            variant="outline"
+            className="px-8 py-6 text-base font-medium tracking-wide border-2 bg-transparent hover:bg-black/5"
+            style={{
+              borderColor: "var(--brand-dark)",
+              color: "var(--brand-dark)",
+              fontFamily: "var(--font-sans)",
+            }}
+            onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Our Philosophy
+          </Button>
+        </motion.div>
 
       </div>
 
