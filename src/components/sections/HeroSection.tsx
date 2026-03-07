@@ -120,7 +120,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right panel — image carousel */}
-        <div className="hidden lg:block relative overflow-hidden">
+        <div className="relative overflow-hidden h-64 sm:h-80 lg:h-auto">
           <AnimatePresence mode="sync">
             <motion.div
               key={current}
@@ -128,7 +128,7 @@ export default function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
-              className="absolute inset-x-0 bottom-0 top-20"
+              className="absolute inset-0 lg:top-20"
             >
               <Image
                 src={SLIDES[current].src}
