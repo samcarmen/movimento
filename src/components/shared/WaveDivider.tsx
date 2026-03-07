@@ -10,7 +10,7 @@ interface WaveDividerProps {
  */
 export default function WaveDivider({ topColor, bottomColor, flip = false }: WaveDividerProps) {
   return (
-    <div style={{ backgroundColor: topColor, lineHeight: 0, fontSize: 0, marginBottom: "-2px" }}>
+    <div style={{ backgroundColor: topColor, lineHeight: 0, fontSize: 0, marginTop: "-1px", marginBottom: "-2px" }}>
       <svg
         viewBox="0 0 1440 60"
         xmlns="http://www.w3.org/2000/svg"

@@ -48,6 +48,7 @@
 }
 
 :root {
+  color-scheme: light;
   --radius: 0.625rem;
 
   /* Monochromatic Blue-Grey Palette */
@@ -55,6 +56,7 @@
   --brand-secondary: #8DBDCF; /* Light blue-grey — in sync with accent */
   --brand-accent: #8DBDCF;    /* Light blue-grey — dividers, decorative lines */
   --brand-tint: #D3E7EE;      /* Very light tint of logo blue — section backgrounds */
+  --brand-band: #E2EDF2;      /* Soft mid band — used to separate adjacent light sections */
   --brand-dark: #1D3540;      /* Deep blue-grey — all text, Contact bg */
   --brand-light: #EEF4F7;     /* Barely-blue tint — main backgrounds */
   --brand-charcoal: #1D3540;  /* In sync with dark */

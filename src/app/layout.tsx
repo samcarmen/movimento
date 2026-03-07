@@ -85,7 +85,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
         <Header />
-        <main>{children}</main>
+        <main style={{ backgroundColor: "var(--brand-light)" }}>{children}</main>
         <Footer />
         <Analytics />
       </body>

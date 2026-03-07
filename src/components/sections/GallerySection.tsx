@@ -31,7 +31,7 @@ export default function GallerySection({ noPaddingBottom = false }: { noPaddingB
     <section
       id="gallery"
       className={`${noPaddingBottom ? "pt-16 md:pt-24 lg:pt-32 pb-0" : "section-padding"} relative`}
-      style={{ backgroundColor: "var(--brand-light)" }}
+      style={{ backgroundColor: "var(--brand-band)" }}
     >
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
