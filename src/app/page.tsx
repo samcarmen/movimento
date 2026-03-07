@@ -9,7 +9,7 @@ import WaveDivider from "@/components/shared/WaveDivider";
 export default function Home() {
   return (
     <>
-      <HeroSection noPaddingBottom />
+      <HeroSection />
       <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-tint)" />
       <AboutSection noPaddingBottom />
       <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-band)" />
