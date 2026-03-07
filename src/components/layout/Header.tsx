@@ -109,7 +109,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto container-padding">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="relative group">
+          <Link href="/" className="relative group outline-none focus:outline-none" style={{ WebkitTapHighlightColor: "transparent" }}>
             <Image
               src="/images/logo.svg"
               alt="Movimento"

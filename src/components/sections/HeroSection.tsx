@@ -16,12 +16,12 @@ export default function HeroSection({ noPaddingBottom = false }: { noPaddingBott
     >
       {/* Ghost watermark — actual logo icon, bleeding off left */}
       <div
-        className="absolute hidden sm:block pointer-events-none select-none"
+        className="absolute pointer-events-none select-none"
         style={{
           right: "-5%",
           top: "50%",
           transform: "translateY(-50%)",
-          width: "60%",
+          width: "clamp(240px, 60%, 720px)",
           opacity: 0.13,
           mixBlendMode: "multiply",
         }}
