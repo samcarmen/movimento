@@ -149,7 +149,7 @@ export default function HeroSection() {
           </button>
 
           {/* Dot indicators */}
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+          <div className="absolute bottom-4 lg:bottom-16 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
             {SLIDES.map((_, i) => (
               <button
                 key={i}
