@@ -15,16 +15,23 @@ export const bodyText: CSSProperties = {
   fontWeight: 400,
 };
 
-/** Heading: Plus Jakarta Sans, bold, slate */
+/** Heading: Museo Moderno Bold */
 export const headingText: CSSProperties = {
-  fontFamily: "var(--font-sans)",
+  fontFamily: "var(--font-display)",
   color: "var(--brand-dark)",
   fontWeight: 700,
 };
 
-/** Subtle display text: same sans, lighter weight/color */
+/** Subtitle: Museo Moderno Light */
+export const subtitleText: CSSProperties = {
+  fontFamily: "var(--font-display)",
+  color: "var(--brand-dark)",
+  fontWeight: 300,
+};
+
+/** Subtle display text: Museo Moderno Light (alias for subtitleText) */
 export const serifText: CSSProperties = {
-  fontFamily: "var(--font-sans)",
+  fontFamily: "var(--font-display)",
   color: "var(--brand-dark)",
   fontWeight: 300,
 };
@@ -34,6 +41,13 @@ export const labelText: CSSProperties = {
   fontFamily: "var(--font-sans)",
   color: "var(--brand-dark)",
   fontWeight: 500,
+};
+
+/** Emphasis: Plus Jakarta Sans Bold — for highlighted body concepts */
+export const emphasisText: CSSProperties = {
+  fontFamily: "var(--font-sans)",
+  color: "var(--brand-dark)",
+  fontWeight: 700,
 };
 
 /** Primary CTA button: terracotta background, white text */

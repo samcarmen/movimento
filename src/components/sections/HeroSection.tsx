@@ -62,22 +62,6 @@ export default function HeroSection() {
         {/* Left panel */}
         <div className="flex flex-col justify-center px-4 sm:px-6 lg:px-16 xl:px-20 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:py-0">
 
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-4 mb-8"
-          >
-            <div className="h-px w-12" style={{ backgroundColor: "var(--brand-accent)" }} />
-            <span
-              className="text-xs tracking-[0.3em] uppercase font-semibold"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--brand-primary)" }}
-            >
-              Move Freely
-            </span>
-          </motion.div>
-
           {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -165,7 +149,7 @@ export default function HeroSection() {
           </button>
 
           {/* Dot indicators */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
             {SLIDES.map((_, i) => (
               <button
                 key={i}

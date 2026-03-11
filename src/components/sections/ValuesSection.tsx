@@ -96,7 +96,7 @@ export default function ValuesSection() {
     >
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
-          <div className="mb-16">
+          <div className="mb-8">
             <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
               What Sets Us Apart
             </SectionHeading>

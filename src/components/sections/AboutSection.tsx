@@ -62,17 +62,19 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
       className={`${noPaddingBottom ? "pt-16 md:pt-24 lg:pt-32 pb-0" : "section-padding"} relative`}
       style={{ backgroundColor: "var(--brand-tint)" }}
     >
-      {/* Decorative arc — echoes logo circle emblem */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
-        <svg
-          className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-[0.07]"
-          viewBox="0 0 600 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="300" cy="300" r="280" stroke="var(--brand-dark)" strokeWidth="1.5" />
-        </svg>
-      </div>
+      {/* Ghost watermark */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
+        style={{
+          backgroundImage: "url('/images/LOGO_WEB-03.jpg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "90% auto",
+          opacity: 0.08,
+          mixBlendMode: "multiply",
+        }}
+        aria-hidden="true"
+      />
 
       <div className="max-w-7xl mx-auto container-padding">
         {/* Section label */}

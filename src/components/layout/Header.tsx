@@ -113,9 +113,9 @@ export default function Header() {
             <Image
               src="/images/logo_transparent.png"
               alt="Movimento"
-              width={160}
-              height={48}
-              className="h-25 w-auto outline-none border-none"
+              width={400}
+              height={120}
+              className="h-16 md:h-44 w-auto outline-none border-none"
               priority
             />
           </Link>

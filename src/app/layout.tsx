@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import StructuredData from "@/components/StructuredData";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const plusJakarta = localFont({
+  src: "../../public/fonts/PlusJakartaSans-VariableFont_wght.ttf",
   variable: "--font-sans",
+});
+
+const museoModerno = localFont({
+  src: "../../public/fonts/MuseoModerno-VariableFont_wght.ttf",
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -76,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakarta.variable}>
+    <html lang="en" className={`${plusJakarta.variable} ${museoModerno.variable}`}>
       <head>
         <link rel="canonical" href="https://movimento.fitness" />
         <link rel="manifest" href="/manifest.json" />

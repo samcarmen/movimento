@@ -122,7 +122,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="section-padding relative"
+      className="section-padding relative pb-20"
       style={{ backgroundColor: "var(--brand-dark)" }}
     >
       <div className="max-w-7xl mx-auto container-padding">
@@ -226,6 +226,23 @@ export default function ContactSection() {
             </form>
           </AnimatedSection>
         </div>
+      </div>
+
+      {/* Wave transition to footer */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none"
+        style={{ lineHeight: 0, marginBottom: "-2px" }}
+      >
+        <svg
+          viewBox="0 0 1440 60"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+          style={{ display: "block", width: "100%", height: "clamp(32px, 4vw, 60px)" }}
+        >
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--brand-light)" />
+        </svg>
       </div>
     </section>
   );

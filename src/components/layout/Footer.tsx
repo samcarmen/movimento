@@ -1,5 +1,4 @@
 import { bodyText, NAVIGATION_LINKS } from "@/lib/styles";
-import WaveDivider from "@/components/shared/WaveDivider";
 
 const INSTAGRAM_URL = "https://www.instagram.com/movimento.kw?igsh=MXgzNnMyeHFvNzc5OQ==";
 
@@ -28,7 +27,6 @@ function FooterLink({ name, href }: { name: string; href: string }) {
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--brand-light)" }}>
-      <WaveDivider topColor="var(--brand-dark)" bottomColor="var(--brand-light)" />
       <div className="max-w-7xl mx-auto container-padding py-5 sm:py-6">
         <div className="flex flex-col items-center gap-4 text-center sm:grid sm:grid-cols-3 sm:items-center sm:text-left">
           <p className="text-xs sm:text-sm" style={bodyText}>
