@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import SectionHeading from "@/components/shared/SectionHeading";
-import AccentDivider from "@/components/shared/AccentDivider";
 import { bodyText, headingText } from "@/lib/styles";
 
 // ---------------------------------------------------------------------------
@@ -70,8 +69,6 @@ function ValueCard({ number, title, description, index }: ValueCardProps) {
         </motion.div>
       </div>
 
-      <AccentDivider className="w-16 h-px mb-6 origin-left" />
-
       <h4 className="text-2xl sm:text-3xl mb-4" style={headingText}>
         {title}
       </h4>
@@ -96,13 +93,13 @@ export default function ValuesSection() {
     >
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
-          <div className="mb-8">
+          <div className="mb-4 sm:mb-8">
             <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
               What Sets Us Apart
             </SectionHeading>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16 lg:gap-20">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-12 md:gap-16 lg:gap-20">
             {VALUES.map((value, index) => (
               <ValueCard key={value.number} {...value} index={index} />
             ))}

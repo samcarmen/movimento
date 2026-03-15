@@ -59,14 +59,14 @@ export default function AboutSection({ noPaddingBottom = false }: { noPaddingBot
   return (
     <section
       id="about"
-      className={`${noPaddingBottom ? "pt-16 md:pt-24 lg:pt-32 pb-0" : "section-padding"} relative`}
+      className={`${noPaddingBottom ? "pt-24 md:pt-32 lg:pt-48 pb-0" : "py-24 md:py-36 lg:py-48"} relative`}
       style={{ backgroundColor: "var(--brand-tint)" }}
     >
       {/* Ghost watermark */}
       <div
         className="absolute inset-0 pointer-events-none select-none"
         style={{
-          backgroundImage: "url('/images/LOGO_WEB-03.jpg')",
+          backgroundImage: "url('/images/Logo_Movimento-03.png')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
           backgroundSize: "90% auto",

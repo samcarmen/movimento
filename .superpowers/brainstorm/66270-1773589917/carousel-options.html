@@ -1,0 +1,115 @@
+<h2>Mobile Carousel Layout Options</h2>
+<p class="subtitle">Which style feels right for the Movimento hero section?</p>
+
+<div class="cards">
+
+  <!-- Option A: Aspect-ratio image, full width -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #f0f4f6;">
+      <!-- Phone frame -->
+      <div style="width:180px;margin:0 auto;background:#1D3540;border-radius:24px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,0.25);">
+        <div style="background:#EEF4F7;border-radius:16px;overflow:hidden;">
+          <!-- nav bar -->
+          <div style="height:28px;background:#EEF4F7;display:flex;align-items:center;padding:0 10px;gap:6px;">
+            <div style="width:40px;height:12px;background:#6CA4B8;border-radius:2px;opacity:0.7;"></div>
+            <div style="flex:1"></div>
+            <div style="width:16px;height:10px;background:#1D3540;border-radius:1px;opacity:0.4;"></div>
+          </div>
+          <!-- 16:9 image -->
+          <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#6CA4B8 0%,#8DBDCF 100%);position:relative;display:flex;align-items:center;justify-content:center;">
+            <span style="color:white;font-size:9px;opacity:0.8;font-family:sans-serif;">photo</span>
+            <!-- dots -->
+            <div style="position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:3px;">
+              <div style="width:14px;height:3px;background:white;border-radius:2px;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.5);border-radius:50%;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.5);border-radius:50%;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.5);border-radius:50%;"></div>
+            </div>
+          </div>
+          <!-- text below -->
+          <div style="padding:10px;">
+            <div style="width:80%;height:10px;background:#1D3540;border-radius:2px;margin-bottom:6px;"></div>
+            <div style="width:60%;height:7px;background:#1D3540;border-radius:2px;opacity:0.5;margin-bottom:10px;"></div>
+            <div style="width:70px;height:22px;background:#1D3540;border-radius:4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Responsive 16:9</h3>
+      <p>Image uses a fixed aspect ratio (16:9) instead of fixed height. Scales fluidly with screen width. No awkward cropping — content area below it.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Full screen image, text overlay -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #f0f4f6;">
+      <div style="width:180px;margin:0 auto;background:#1D3540;border-radius:24px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,0.25);">
+        <div style="background:#EEF4F7;border-radius:16px;overflow:hidden;">
+          <!-- Full bleed image with text overlay -->
+          <div style="width:100%;height:220px;background:linear-gradient(135deg,#6CA4B8 0%,#1D3540 100%);position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;">
+            <!-- nav overlay -->
+            <div style="position:absolute;top:8px;left:10px;width:40px;height:12px;background:white;border-radius:2px;opacity:0.9;"></div>
+            <!-- gradient overlay -->
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(29,53,64,0.8) 0%,transparent 50%);border-radius:16px;"></div>
+            <!-- text on image -->
+            <div style="position:relative;z-index:1;">
+              <div style="width:80%;height:10px;background:white;border-radius:2px;margin-bottom:5px;"></div>
+              <div style="width:55%;height:7px;background:rgba(255,255,255,0.6);border-radius:2px;margin-bottom:8px;"></div>
+              <div style="width:60px;height:18px;background:#6CA4B8;border-radius:3px;"></div>
+            </div>
+            <!-- dots -->
+            <div style="position:absolute;bottom:8px;right:10px;display:flex;gap:3px;">
+              <div style="width:14px;height:3px;background:white;border-radius:2px;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.4);border-radius:50%;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.4);border-radius:50%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Full Bleed + Text Overlay</h3>
+      <p>Image fills the entire mobile screen. Text and CTA sit on top with a dark gradient. Immersive, editorial feel. Image and content share the same space.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Rounded card, portrait -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 16px; background: #f0f4f6;">
+      <div style="width:180px;margin:0 auto;background:#1D3540;border-radius:24px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,0.25);">
+        <div style="background:#EEF4F7;border-radius:16px;overflow:hidden;">
+          <!-- nav bar -->
+          <div style="height:28px;background:#EEF4F7;display:flex;align-items:center;padding:0 10px;gap:6px;">
+            <div style="width:40px;height:12px;background:#6CA4B8;border-radius:2px;opacity:0.7;"></div>
+            <div style="flex:1"></div>
+            <div style="width:16px;height:10px;background:#1D3540;border-radius:1px;opacity:0.4;"></div>
+          </div>
+          <!-- text first -->
+          <div style="padding:10px 10px 6px;">
+            <div style="width:80%;height:10px;background:#1D3540;border-radius:2px;margin-bottom:5px;"></div>
+            <div style="width:55%;height:7px;background:#1D3540;border-radius:2px;opacity:0.5;margin-bottom:8px;"></div>
+            <div style="width:60px;height:18px;background:#1D3540;border-radius:4px;margin-bottom:8px;"></div>
+          </div>
+          <!-- rounded card image below text -->
+          <div style="margin:0 10px 10px;border-radius:12px;overflow:hidden;position:relative;">
+            <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#6CA4B8,#8DBDCF);display:flex;align-items:center;justify-content:center;">
+              <span style="color:white;font-size:9px;opacity:0.8;font-family:sans-serif;">photo</span>
+            </div>
+            <!-- dots -->
+            <div style="position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:3px;">
+              <div style="width:14px;height:3px;background:white;border-radius:2px;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.5);border-radius:50%;"></div>
+              <div style="width:4px;height:3px;background:rgba(255,255,255,0.5);border-radius:50%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Text Above, Rounded Image Card</h3>
+      <p>Text and CTA come first, then a rounded-corner image card below. Clean hierarchy, no cropping issues. Modern app-like feel.</p>
+    </div>
+  </div>
+
+</div>

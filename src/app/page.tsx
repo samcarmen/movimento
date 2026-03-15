@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutSection noPaddingBottom />
+      <AboutSection />
       <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-band)" />
       <GallerySection />
       <WaveDivider topColor="var(--brand-band)" bottomColor="var(--brand-light)" />

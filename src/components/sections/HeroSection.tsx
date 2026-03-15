@@ -10,10 +10,11 @@ import { bodyText, headingText } from "@/lib/styles";
 const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20schedule%20a%20class%20at%20Movimento.";
 
 const SLIDES = [
-  { src: "/images/gallery/09.jpg", alt: "Movimento studio session" },
-  { src: "/images/gallery/08.jpg", alt: "Postural alignment training" },
-  { src: "/images/gallery/06.jpg", alt: "Movement session at Movimento studio" },
-  { src: "/images/hero-photo.jpg", alt: "Movimento Kuwait studio" },
+  { src: "/images/gallery/17.jpg", alt: "Movimento studio session" },
+  { src: "/images/gallery/22.jpg", alt: "Postural alignment training" },
+  { src: "/images/gallery/01.jpg", alt: "Movement session at Movimento studio" },
+  { src: "/images/gallery/02.jpg", alt: "Movimento Kuwait studio" },
+  { src: "/images/gallery/05.jpg", alt: "Movimento Kuwait studio" },
 ];
 
 export default function HeroSection() {
@@ -38,7 +39,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh]"
+      className="relative lg:min-h-[100dvh]"
       style={{ backgroundColor: "var(--brand-light)" }}
     >
       {/* Ghost watermark — commented out, awkward on mobile
@@ -57,10 +58,10 @@ export default function HeroSection() {
       */}
 
       {/* Full-height grid */}
-      <div className="relative w-full min-h-[100dvh] grid lg:grid-cols-2">
+      <div className="relative w-full lg:min-h-[100dvh] grid lg:grid-cols-2">
 
         {/* Left panel */}
-        <div className="flex flex-col justify-center px-4 sm:px-6 lg:px-16 xl:px-20 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:py-0">
+        <div className="order-2 lg:order-1 flex flex-col justify-start lg:justify-center px-4 sm:px-6 lg:px-16 xl:px-20 pt-10 pb-20 sm:pb-24 lg:py-0">
 
           {/* Main heading */}
           <motion.h1
@@ -105,7 +106,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right panel — image carousel */}
-        <div className="relative overflow-hidden h-64 sm:h-80 lg:h-auto">
+        <div className="order-1 lg:order-2 mt-20 sm:mt-24 lg:mt-0 overflow-hidden aspect-[4/3] lg:aspect-auto relative lg:h-auto">
           <AnimatePresence mode="sync">
             <motion.div
               key={current}

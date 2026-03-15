@@ -107,15 +107,15 @@ export default function Header() {
       style={{ borderBottom: scrolled ? "1px solid rgba(0, 0, 0, 0.05)" : "none" }}
     >
       <nav className="max-w-7xl mx-auto container-padding">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-20 md:h-20">
           {/* Logo */}
           <Link href="/" className="relative group outline-none focus:outline-none" style={{ WebkitTapHighlightColor: "transparent" }}>
             <Image
-              src="/images/logo_transparent.png"
+              src="/Logo_Movimento-04.png"
               alt="Movimento"
               width={400}
               height={120}
-              className="h-20 md:h-44 w-auto outline-none border-none"
+              className="h-13 md:h-15 w-auto outline-none border-none"
               priority
             />
           </Link>
