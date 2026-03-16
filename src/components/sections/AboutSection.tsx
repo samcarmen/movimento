@@ -13,7 +13,7 @@ const STORY_COLUMNS = [
   {
     title: "Our Method",
     paragraph:
-      "We work with the Canali Postural Method — an internationally recognized approach combining biomechanical principles with precision and respect for the body's natural organization. Through targeted, progressive exercises, we improve the way your body moves in everyday life.",
+      "We work with the Canali Postural Method® — an internationally recognized approach combining biomechanical principles with precision and respect for the body's natural organization. Through targeted, progressive exercises, we improve the way your body moves in everyday life.",
     extraClass: "",
   },
   {
