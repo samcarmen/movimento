@@ -18,11 +18,13 @@ function scrollToSection(
   onComplete?: () => void,
 ) {
   e.preventDefault();
-  const element = document.querySelector(href);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-    onComplete?.();
-  }
+  onComplete?.();
+  setTimeout(() => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 300);
 }
 
 // ---------------------------------------------------------------------------
@@ -137,7 +139,8 @@ export default function Header() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden relative w-10 h-10 flex items-center justify-center"
+            type="button"
+            className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             style={{ color: "var(--brand-dark)" }}
           >
