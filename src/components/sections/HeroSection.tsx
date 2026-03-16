@@ -10,11 +10,11 @@ import { bodyText, headingText } from "@/lib/styles";
 const WA_URL = "https://wa.me/96566130788?text=Hi!%20I%27d%20like%20to%20schedule%20a%20class%20at%20Movimento.";
 
 const SLIDES = [
-  { src: "/images/gallery/17.jpg", alt: "Movimento studio session" },
-  { src: "/images/gallery/22.jpg", alt: "Postural alignment training" },
-  { src: "/images/gallery/01.jpg", alt: "Movement session at Movimento studio" },
-  { src: "/images/gallery/02.jpg", alt: "Movimento Kuwait studio" },
-  { src: "/images/gallery/05.jpg", alt: "Movimento Kuwait studio" },
+  { src: "/images/gallery/client-wall-bars-knee-lift.jpg", alt: "client wall bars knee lift", position: "object-center" },
+  { src: "/images/gallery/therapist-side-lying-leg-lift-02.jpg", alt: "therapist side lying leg lift", position: "object-center" },
+  { src: "/images/gallery/client-back-extension-table.jpg", alt: "client back extension table", position: "object-center" },
+  { src: "/images/gallery/studio-treatment-area-window-view.jpg", alt: "studio treatment area window view", position: "object-center" },
+  { src: "/images/gallery/studio-wall-bars-window-view.jpg", alt: "studio wall bars window view", position: "object-center" },
 ];
 
 export default function HeroSection() {
@@ -120,9 +120,9 @@ export default function HeroSection() {
                 src={SLIDES[current].src}
                 alt={SLIDES[current].alt}
                 fill
-                className="object-cover object-center"
+                className={`object-cover ${SLIDES[current].position}`}
                 priority={current === 0}
-                sizes="50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
           </AnimatePresence>

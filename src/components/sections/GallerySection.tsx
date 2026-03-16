@@ -11,12 +11,12 @@ import { bodyText } from "@/lib/styles";
 // ---------------------------------------------------------------------------
 
 const GALLERY_PHOTOS = [
-  { src: "/images/gallery/01.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/02.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/08.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/05.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/06.jpg", alt: "Movimento studio" },
-  { src: "/images/gallery/09.jpg", alt: "Movimento studio" },
+  { src: "/images/gallery/studio-city-skyline.jpg", alt: "studio city skyline", position: "object-center" },
+  { src: "/images/gallery/studio-logo-wall-night.jpg", alt: "studio logo wall night", position: "object-center" },
+  { src: "/images/gallery/studio-treatment-area-window-view.jpg", alt: "studio treatment area window view", position: "object-center" },
+  { src: "/images/gallery/client-assisted-dowel-press.jpg", alt: "client assisted dowel press", position: "object-center" },
+  { src: "/images/gallery/client-wall-bars-knee-lift.jpg", alt: "client wall bars knee lift", position: "object-center" },
+  { src: "/images/gallery/therapist-side-lying-leg-lift-03.jpg", alt: "therapist side lying leg lift", position: "object-center" },
 ];
 
 const INSTAGRAM_HANDLE = "@movimento.kw";
@@ -59,7 +59,7 @@ export default function GallerySection({ noPaddingBottom = false }: { noPaddingB
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-300 ease-out hover:scale-[1.03]"
+                className={`object-cover ${photo.position} transition-transform duration-300 ease-out hover:scale-[1.03]`}
               />
             </motion.div>
           ))}
