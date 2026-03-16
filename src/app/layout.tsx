@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Movimento | Where Quality Meets Movement",
     template: "%s | Movimento"
   },
-  description: "Movimento - A studio dedicated to conscious movement in Kuwait. Using the Canali Postural Method and Italian equipment, we help you restore balance, stability, and freedom in your body. Move better. Live better.",
+  description: "Movimento - A studio dedicated to conscious movement in Kuwait. Using the Canali Postural Method® and Italian equipment, we help you restore balance, stability, and freedom in your body. Move better. Live better.",
   keywords: ["Canali Postural Method", "posture training Kuwait", "movement education", "Italian fitness equipment", "personalized training", "conscious movement", "spinal stability", "muscular balance", "postural correction", "movement coaching Kuwait", "back pain relief", "mobility training"],
   authors: [{ name: "Movimento Fitness Studio" }],
   creator: "Movimento",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     url: "https://movimento.fitness",
     siteName: "Movimento",
     title: "Movimento | Where Quality Meets Movement",
-    description: "Quality as a standard. Italian excellence in every step. Using the Canali Postural Method to help you move better and live better.",
+    description: "Quality as a standard. Italian excellence in every step. Using the Canali Postural Method® to help you move better and live better.",
     images: [
       {
         url: "/images/og-image.jpg",

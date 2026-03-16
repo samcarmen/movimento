@@ -14,7 +14,7 @@ const VALUES = [
     number: "01",
     title: "Italian Tools & Know-How",
     description:
-      "All our equipment is designed and manufactured in Italy, selected for its reliability, durability, and coherence with the Canali Postural Method.",
+      "All our equipment is designed and manufactured in Italy, selected for its reliability, durability, and coherence with the Canali Postural Method®.",
   },
   {
     number: "02",
