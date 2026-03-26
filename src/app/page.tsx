@@ -13,11 +13,11 @@ export default function Home() {
       <AboutSection />
       <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-light)" />
       <ValuesSection />
-      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-band)" />
+      <WaveDivider topColor="var(--brand-light)" bottomColor="var(--brand-tint)" />
       <WhoItsForSection />
-      <WaveDivider topColor="var(--brand-band)" bottomColor="var(--brand-tint)" />
+      <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-band)" />
       <GallerySection />
-      <WaveDivider topColor="var(--brand-tint)" bottomColor="var(--brand-dark)" />
+      <WaveDivider topColor="var(--brand-band)" bottomColor="var(--brand-dark)" />
       <ContactSection />
     </>
   );
